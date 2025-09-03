@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div{
+        position: relative;
+        width: 1200px;
+        border: 1px solid;
+        margin: 50px auto;
+      }
+      div.loca1 p {
+        position: absolute;
+				width: 100px;
+        border: 1px solid;
+      }
+      div.loca1 p:first-child {
+        left: 0;
+      }
+      div.loca1 p:nth-child(2) {
+        left: 100px;
+      }
+      div.loca1 p:nth-child(3) {
+        left: 200px;
+      }
+      div.loca1 p:nth-child(4) {
+        left: 300px;
+      }
+      div.loca1 p:nth-child(5) {
+        /*left: 400px;*/
+				right: 0;
+      }
+			div.loca2 p {
+				border: 1px solid;
+				display: inline-block;
+			}
+
+			div.loca3 {
+				overflow: hidden;
+			}
+			div.loca3 p{
+				border: 1px solid;
+				float: left;
+			}
+			div.loca3 p:nth-child(5){
+	      float:right;
+
+			}
+			
+			
+    </style>
+  </head>
+  <body>
+    <div class="loca1">
+      <p>하나11111111111111111111111</p>
+      <p>하나2</p>
+      <p>하나3</p>
+      <p>하나4</p>
+      <p>하나5</p>
+    </div>
+    <div class="loca2">
+      <p>하나11111111111111111</p>
+      <p>하나2</p>
+      <p>하나3</p>
+      <p>하나4</p>
+      <p>하나5</p>
+    </div>
+    <div class="loca3">
+      <p>하나11111111111111111</p>
+      <p>하나2</p>
+      <p>하나3</p>
+      <p>하나4</p>
+      <p>하나5</p>
+    </div>
+    <div class="loca4">
+      <p>하나11111111111111111</p>
+      <p>하나2</p>
+      <p>하나3</p>
+      <p>하나4</p>
+      <p>하나5</p>
+    </div>
+  </body>
+</html>
