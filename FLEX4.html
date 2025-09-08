@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex3</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;}
+.flex-container{
+	width: 1200px;
+	height: 400px;
+	display: flex;
+	/* flex-direction: column; */
+	background: #ccc;
+	align-items: flex-start;
+}
+.item{
+	background: red;
+	/* flex-basis: 200px; */
+	/* flex-basis: 40%; */
+	border: 1px solid;
+	/* flex-grow: 1; */
+	flex-shrink: 1;
+}
+.item:first-child(1){
+	flex-grow: 0;
+}
+.item:nth-child(2){
+	flex-grow:2;
+}
+.item:nth-child(3){
+	flex-grow:1;
+}
+
+   
+      
+    </style>
+  </head>
+  <body>
+		<div class="flex-container">
+   <div class="item">1</div>
+   <div class="item">2</div>
+   <div class="item">3</div>
+</div>
+
+
+
+  </body>
+</html>
