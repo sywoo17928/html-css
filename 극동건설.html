@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHN ACE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      ul.gnb {
+        width: 650px;
+        display: flex;
+      }
+      ul.gnb li {
+        flex: 1;
+        line-height: 100px;
+        text-align: center;
+      }
+      ul.gnb li a {
+        position: relative;
+      }
+      ul.gnb li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: 0.2s;
+      }
+      ul.gnb li:hover a::after {
+        width: 100%;
+      }
+      div::after {
+        content: url(https://tuhonstory.co.kr/static/pc/images/i_header1.png);
+      }
+      div:hover :after {
+        content: url(https://tuhonstory.co.kr/static/pc/images/i_header1_hover.png);
+      }
+      nav a {
+        display: flex;
+        width: 64px;
+        height: 64px;
+        justify-content: center;
+        align-items: center;
+        background-image: url(https://tuhonstory.co.kr/static/pc/images/i_header1.png);
+      }
+    </style>
+  </head>
+  na a spwan
+  <body>
+    <ul class="gnb">
+      <li><a href="#">투혼스토리</a></li>
+      <li><a href="#">WHY 투혼</a></li>
+      <li><a href="#">처음이신가요?</a></li>
+      <li><a href="#">이벤트</a></li>
+      <li><a href="#">투혼서비스</a></li>
+      <li><a href="#">모의투자</a></li>
+    </ul>
+    <div></div>
+    <nav>
+      <a href="#"
+        ><span>투혼 <br />MTS</span></a
+      >
+    </nav>
+  </body>
+</html>
