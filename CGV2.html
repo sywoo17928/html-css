@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGV</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .wrapper .topwarp {
+        background: url(./images/CGV/image/cgv_bg_top.gif);
+      }
+      .wrapper .topwarp .top {
+        width: 1025px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .wrapper .topwarp .top ul {
+        display: flex;
+        gap: 40px;
+        padding: 20px 0;
+      }
+      .wrapper .topwarp .top ul li a {
+        color: #fff;
+      }
+      .wrapper .menu {
+        width: 1025px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 20px 0; */
+        height: 100px;
+      }
+      .wrapper .menu ul {
+        display: flex;
+        gap: 40px;
+      }
+      .wrapper .menu ul a {
+        color: red;
+        font-size: 18px;
+      }
+      .wrapper .visual {
+        width: 1025px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .wrapper .cgv {
+        width: 1025px;
+        margin: 0 auto;
+      }
+      .wrapper .cgv ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0;
+      }
+      .wrapper .banner {
+        width: 1025px;
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+      }
+      .wrapper .banner > div {
+        flex: 1;
+      }
+      .wrapper .banner > div:first-child {
+        display: flex;
+        justify-content: space-between;
+      }
+     
+       
+      
+      .wrapper .banner .notice ul li {
+        line-height: 30px; 
+				display: flex;
+        justify-content: space-between;
+      }
+      .wrapper .foot {
+        background: #ccc;
+      }
+      .wrapper .foot div {
+        width: 1025px;
+        margin: 0 auto;
+        padding: 50px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="topwarp">
+        <div class="top">
+          <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">English</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- topwarp 끝-->
+      <div class="menu">
+        <div>
+          <p><img src="./images/CGV/image/cgv_logo.gif" alt="" /></p>
+        </div>
+        <div>
+          <ul>
+            <li><a href="#">영화예매</a></li>
+            <li><a href="#">신작개봉</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">CGV매점</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- menu끝 -->
+      <div class="visual">
+        <p><img src="./images/CGV/image/cgv_visual.jpg" alt="" /></p>
+      </div>
+      <div class="cgv">
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="./images/CGV/image/cgv_img01.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./images/CGV/image/cgv_img02.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./images/CGV/image/cgv_img03.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./images/CGV/image/cgv_img04.png" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="banner">
+        <div>
+          <h3>이벤트</h3>
+          <p><img src="./images/CGV/image/cgv_banner.jpg" alt="" /></p>
+        </div>
+        <div>
+          <h3>공지사항</h3>
+          <div class="notice">
+            <ul>
+              <li><a href="#">공지사항 제목이 들어갑니다</a></li>
+              <li><a href="#">공지사항 제목이 들어갑니다</a></li>
+              <li><a href="#">공지사항 제목이 들어갑니다</a></li>
+              <li><a href="#">공지사항 제목이 들어갑니다</a></li>
+              <li>
+                <a href="#"
+                  >공지사항 제목이 들어갑니다공지사항 제목이 들어갑니다</a
+                >
+              </li>
+            </ul>
+            <ul>
+              <li>2017-08-07</li>
+              <li>2017-08-07</li>
+              <li>2017-08-07</li>
+              <li>2017-08-07</li>
+              <li>2017-08-07</li>
+            </ul>
+          </div>
+          <div class="foot">
+            <div>
+              <p>All Copyrighys Reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- wrapper 끝 -->
+  </body>
+</html>
