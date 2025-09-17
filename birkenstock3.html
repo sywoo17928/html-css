@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .wrap .topwrap {
+        background: #004084;
+      }
+      .topwrap .top {
+        width: 837px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 0;
+      }
+      .topwrap .top ul {
+        display: flex;
+        gap: 20px;
+      }
+      .topwrap .top ul li a {
+        color: #fff;
+      }
+			.topwrap .top ul li a:hover{
+				color: red;
+			}
+			.topwrap .top ul li a::after{
+				content: "/";
+				padding-left: 15px;
+			}
+      
+			.topwrap .top ul li:last-child :after{
+				content: "";
+			}
+      .logo1 {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .menu {
+        width: 837px;
+        margin: 0 auto;
+      }
+      .menu ul {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .visual {
+        width: 837px;
+        height: 300px;
+        margin: 50px auto;
+      }
+      .visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      ul.icon {
+        width: 837px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 90px;
+      }
+      ul.icon li {
+        position: relative;
+        cursor: pointer;
+      }
+      ul.icon li::after {
+        position: absolute;
+        left: 3px;
+        top: 2px;
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        border: 1px solid;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 100px;
+        opacity: 0;
+        transition: 0.5s;
+      }
+
+      ul.icon li:hover:after {
+        opacity: 1;
+      }
+      ul.icon li:first-child::after {
+        content: "ABOUT";
+      }
+      ul.icon li:nth-child(2)::after {
+        content: "COLLECTION";
+      }
+      ul.icon li:nth-child(3)::after {
+        content: "SHOP";
+      }
+      ul.icon li:nth-child(4)::after {
+        content: "SERVICES";
+      }
+      ul.sub {
+        width: 1182px;
+        margin: 50px auto;
+        display: flex;
+      }
+      ul.sub li {
+        position: relative;
+      }
+      ul.sub li a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+      }
+      ul.sub li:hover a {
+        opacity: 1;
+      }
+      ul.link {
+        width: 1182px;
+        margin: 50px auto;
+        display: flex;
+      }
+      ul.link li:first-child {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      ul.link li:first-child div {
+        text-align: right;
+        padding-right: 20px;
+      }
+      ul.link li:first-child div p {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      ul.link li:first-child div p span {
+        font-weight: bold;
+      }
+      .foot {
+        background: #022857;
+        padding: 50px 0;
+      }
+      .foot > div {
+        width: 1182px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+      }
+      .foot > div ul {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topwrap">
+        <div class="top">
+          <ul>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">장바구니</a></li>
+            <li><a href="#">고객센터</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="logo1">
+        <img src="./images/birkenstock/images/logo1.png" alt="" />
+      </p>
+      <div class="menu">
+        <ul>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">COLLECTION</a></li>
+          <li><a href="#">MEN</a></li>
+          <li><a href="#">WOMEN</a></li>
+          <li><a href="#">BOYS</a></li>
+          <li><a href="#">GIRLS</a></li>
+          <li><a href="#">SERVICES</a></li>
+        </ul>
+      </div>
+      <p class="visual">
+        <img src="./images/birkenstock/images/visual.png" alt="" />
+      </p>
+      <ul class="icon">
+        <li><img src="./images/birkenstock/images/icon1.png" alt="" /></li>
+        <li><img src="./images/birkenstock/images/icon2.png" alt="" /></li>
+        <li><img src="./images/birkenstock/images/icon3.png" alt="" /></li>
+        <li><img src="./images/birkenstock/images/icon4.png" alt="" /></li>
+      </ul>
+      <ul class="sub">
+        <li>
+          <img src="./images/birkenstock/images/sub1.png" alt="" />
+          <a href="#">
+            <p>
+              2018년 여름 신상<br />
+              지금 바로 만나보세요!<br />
+              +
+            </p>
+          </a>
+        </li>
+        <li>
+          <img src="./images/birkenstock/images/sub2.png" alt="" />
+          <a href="#">
+            <p>상품 구매하기</p>
+          </a>
+        </li>
+        <li>
+          <img src="./images/birkenstock/images/sub3.png" alt="" />
+          <a href="#">
+            <p>
+              이보다 더 'Cool'<br />
+              할수는 없다<br />
+              +
+            </p>
+          </a>
+        </li>
+      </ul>
+      <ul class="link">
+        <li>
+          <div>
+            <p>
+              건강한 신발을 만드는<br />
+              <span>버켄스탁</span>과 함께<br />
+              다양한 나를 만나보세요
+            </p>
+            <a href="#">지금 만나러가기 ></a>
+          </div>
+        </li>
+        <li><img src="./images/birkenstock/images/sub4.png" alt="" /></li>
+        <li><img src="./images/birkenstock/images/sub5.png" alt="" /></li>
+        <li><img src="./images/birkenstock/images/sub6.png" alt="" /></li>
+      </ul>
+      <div class="foot">
+        <div>
+          <p><img src="./images/birkenstock/images/logo2.png" alt="" /></p>
+          <p>copyright 2016(c) BIRKENSTOCK all right reserved</p>
+          <ul>
+            <li><img src="./images/birkenstock/images/sns1.png" alt="" /></li>
+            <li><img src="./images/birkenstock/images/sns2.png" alt="" /></li>
+            <li><img src="./images/birkenstock/images/sns3.png" alt="" /></li>
+            <li><img src="./images/birkenstock/images/sns4.png" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
