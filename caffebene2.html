@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>caffebene</title>
+    <style>
+      * {margin: 0; padding: 0; box-sizing: border-box;}
+      body {font-family: "Noto Sans KR", sans-serif;}
+      a {text-decoration: none; color: #333;}
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: #fff;
+        z-index: 100;
+      }
+      nav {
+        width: 1190px;
+        height: 123px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav > ul {
+        display: flex;
+        gap: 60px;
+        list-style: none;
+      }
+      .btn-area {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .btn-area button {
+        padding: 8px 16px;
+        background: #a67b5b;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .lang a {
+        color: #444;
+        font-size: 1px;
+      }
+
+      /* ✅ 메인 비주얼 */
+      .visual {
+        margin-top: 123px; /* 헤더 높이만큼 띄움 */
+      }
+      .visual img {
+        width: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <nav>
+        <p>
+          <img src="http://caffebene.co.kr/images/common/logo.png" alt="카페베네 로고" />
+        </p>
+        <ul>
+          <li><a href="">caffebene</a></li>
+          <li><a href="">Menu</a></li>
+          <li><a href="">Store</a></li>
+          <li><a href="">Membership</a></li>
+          <li><a href="">GLOBAL</a></li>
+          <li><a href="">CONTENTS</a></li>
+        </ul>
+        <div class="btn-area">
+          <button type="button">가맹문의</button>
+          <div class="lang">
+            <a href="#">KR</a> | <a href="#">EN</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 메인 배너 -->
+    <main>
+      <section class="visual">
+        <img src="http://caffebene.co.kr/uploads/banner/20241128813084.jpg" alt="카페베네 메인 배너" />
+      </section>
+    </main>
+  </body>
+</html>
