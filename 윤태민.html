@@ -1,142 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>자기소개 + 3D 큐브</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Noto Sans KR", sans-serif;
-}
-
-body {
-  background: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.container {
-  display: flex;
-  gap: 50px;
-  background: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  max-width: 1000px;
-  width: 90%;
-}
-
-/* 좌측 자기소개 */
-.profile {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 15px;
-}
-
-.profile h1 {
-  font-size: 28px;
-  color: #333;
-}
-
-.profile p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #555;
-}
-
-.profile .links a {
-  display: inline-block;
-  margin-top: 10px;
-  margin-right: 10px;
-  padding: 8px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  background: #06f;
-  color: #fff;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-.profile .links a:hover {
-  background: #0044cc;
-}
-
-/* 우측 3D 큐브 */
-.cube-container {
-  flex: 1;
-  width: 400px;
-  height: 400px;
-  perspective: 800px;
-}
-
-.cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: rotateCube 10s linear infinite;
-}
-
-.cube img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
-/* 6면 이미지 배치 */
-.cube img:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
-.cube img:nth-child(2) { transform: rotateY(180deg) translateZ(200px); }
-.cube img:nth-child(3) { transform: rotateY(-90deg) translateZ(200px); }
-.cube img:nth-child(4) { transform: rotateY(90deg) translateZ(200px); }
-.cube img:nth-child(5) { transform: rotateX(90deg) translateZ(200px); }
-.cube img:nth-child(6) { transform: rotateX(-90deg) translateZ(200px); }
-
-/* 회전 애니메이션 */
-@keyframes rotateCube {
-  0%   { transform: rotateX(0deg) rotateY(0deg); }
-  100% { transform: rotateX(360deg) rotateY(360deg); }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yuntaemin</title>
 </head>
 <body>
-
-<div class="container">
-  <!-- 좌측 자기소개 -->
-  <div class="profile">
-    <h1>홍길동</h1>
-    <p>
-      안녕하세요! 저는 웹 개발과 디자인을 공부하는 윤태민입니다.<br>
-      사용자에게 편리하고 직관적인 UI/UX를 만드는 것을 좋아합니다.
-    </p>
-    <div class="links">
-      <a href="#">GitHub</a>
-      <a href="#">Instagram</a>
-      <a href="mailto:test@email.com">Email</a>
-    </div>
-  </div>
-
-  <!-- 우측 3D 큐브 -->
-  <div class="cube-container">
-    <div class="cube">
-      <img src="./images/cubic_css1.jpg" alt="">
-      <img src="./images/cubic_css2.jpg" alt="">
-      <img src="./images/cubic_css3.jpg" alt="">
-      <img src="./images/cubic_css4.jpg" alt="">
-      <img src="./images/cubic_css5.jpg" alt="">
-      <img src="./images/cubic_css6.jpg" alt="">
-    </div>
-  </div>
-</div>
-
+  <ul class="">
+    <li>
+      <a href=""></a>
+    </li>
+  </ul>
+  
 </body>
 </html>
-
