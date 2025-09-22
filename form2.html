@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+			*{margin: 0;padding: 0;}
+      input {
+        /* display: none; */
+      }
+    
+      p {   
+			 position: fixed;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        transition: 0.5s;
+				border: 1px solid;
+      }
+      input:checked ~ p {
+        left: -100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="checkbox" name="photo" id="photo" />
+    <label for="photo">이미지 보이기 / 숨기기</label>
+    <p><img src="./images/photo1.jpg" alt="" /></p>
+  </body>
+</html>
