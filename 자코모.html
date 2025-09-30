@@ -21,22 +21,28 @@
       }
       .visual {
         position: relative;
-        height: 100vh;
+     
       }
       .visual video {
         width: 100%;
         height: 100%;
         object-fit: cover;
+       
       }
-			.visual p:first-child{
-			
-				
-				display: block;
-				justify-content: center;
-				align-items: center;
-			
-
-			}
+      .tit {
+        height: 100%;
+        top: 20%;
+        left: 5%;
+        
+        position: relative;
+        z-index: 1;
+      }
+      .txt {
+        display: block;
+        position: absolute;
+      
+      
+      }
 
       .scroll {
         position: absolute;
@@ -76,10 +82,12 @@
   </head>
   <body>
     <div class="visual">
-      <p>
-        좋은 소파를 위한 책임감 <br />
-        소파는 결국, 자코모
-      </p>
+      <div class="tit">
+        <p>
+          좋은 소파를 위한 책임감 <br />
+          소파는 결국, 자코모
+        </p>
+      </div>
       <div class="txt">
         <p>Responsibility for a Good Sofa.</p>
       </div>
