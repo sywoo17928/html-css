@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+			p img {
+				clip-path: circle(50%);
+
+			}
+			div > img {
+				filter: blur(10px);
+			}
+			div {
+				position: relative;
+				width: 500px;
+				height: 500px;
+			}
+			img {
+				width: 100%;
+				height: 100px;
+				object-fit:cover;}
+			div p{position: absolute;
+			left: 0;top: 0;}
+
+			p img:hover {
+				/* clip-path: ellipse(300px 200px); */
+				clip-path: inset(0 round 100px 300px);
+			}
+    
+    </style>
+  </head>
+  <body>
+    <div>
+    <p><img src="./images/clip1.jpg" alt=""></p>
+  </body>
+</html>
