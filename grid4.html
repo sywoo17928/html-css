@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .grid-container {
+        width: 1200px;
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 200px 200px 400px 200px 200px;
+        grid-template-areas:
+          "hlogo menu menu menu menu"
+          "slide slide slide slide slide"
+          "c1 c1 c2 c3 c3"
+          "fmenu fmenu fmenu fmenu flogo"
+          "copyright copyright copyright copyright flogo";
+        grid-template-rows: 100px 300px 200px 100px;
+      }
+
+      .grid-container .hlogo {
+        grid-area: hlogo;
+        background: #aaa;
+			
+      }
+      .grid-container .menu {
+        grid-area: menu;
+        background: #bbb;
+      }
+      .grid-container .slide {
+        grid-area: slide;
+        background: #ccc;
+      }
+
+      .grid-container .c1 {
+        grid-area: c1;
+        background: #ddd;
+      }
+      .grid-container .c2 {
+        grid-area: c2;
+        background: #eee;
+      }
+      .grid-container .c3 {
+        grid-area: c3;
+        background: #aaa;
+      }
+			 .grid-container .fmenu {
+        grid-area: fmenu;
+        background: #bbb;
+      }
+      
+      .grid-container .copryright {
+        grid-area: copryright;
+        background: #ccc;
+      }
+     .grid-container .flogo {
+        grid-area: flogo;
+        background: #ddd;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="hlogo"></div>
+      <div class="menu"></div>
+      <div class="slide"></div>
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="fmenu"></div>
+      <div class="copryrigh"></div>
+      <div class="tflogo"></div>
+    </div>
+  </body>
+</html>
