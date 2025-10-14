@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>태광그룹</title>
+
+    <!-- Poppins 폰트 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 나눔스퀘어네오 폰트 -->
+    <style>
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url("https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff2");
+        font-display: swap;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+
+      }
+
+      body {
+        font-family: "NanumSquareNeo", sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* ---------------- Header ---------------- */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 35px;
+        display: block;
+      }
+
+      .menu {
+        display: flex;
+        gap: 40px;
+      }
+
+      .menu a {
+        font-family: "NanumSquareNeo";
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.3s ease;
+      }
+
+      .menu a:hover {
+        color: #ddd;
+      }
+
+      /* ---------------- Section ---------------- */
+      section {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      section video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      section .txt {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+
+      section .txt h1 {
+        position: absolute;
+        right: 6%;
+        top: 25%;
+        font-size: 70px;
+        font-weight: 600;
+        line-height: 1.1;
+        font-family: "Poppins", sans-serif;
+      }
+
+      section .txt h2 {
+        position: absolute;
+        left: 6%;
+        bottom: 10%;
+        font-size: 20px;
+        font-family: "NanumSquareNeo";
+        font-weight: 700;
+      }
+
+      /* ---------------- Footer ---------------- */
+      footer {
+        height: 300px;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <img
+            src="https://www.taekwanggroup.co.kr/resources/front/assets/img/ex/header-d0329d3d/header_logo.svg"
+            alt="태광그룹 로고"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="#">태광기업</a></li>
+          <li><a href="#">사업분야</a></li>
+          <li><a href="#">지속가능경영</a></li>
+          <li><a href="#">홍보센터</a></li>
+          <li>
+            <a href="#"
+              >인재채용
+              <img
+                src="https://www.taekwanggroup.co.kr/resources/front/assets/img/ex/header-d0329d3d/122610835_black.svg"
+                alt=""
+                style="vertical-align: middle"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- 섹션 1 -->
+    <section>
+      <video muted autoplay loop playsinline>
+        <source
+          src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_1.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="txt">
+        <h1>
+          Connection the<br />
+          Future with Light
+        </h1>
+        <h2>연결(Connection) 미래(Future) 빛(Light)</h2>
+      </div>
+    </section>
+
+    <!-- 섹션 2 -->
+    <section>
+      <video muted autoplay loop playsinline>
+        <source
+          src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_2.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="txt">
+        <h1>
+          Add Value to<br />
+          Your Everyday
+        </h1>
+        <h2>가치(Value) 고객(Customer) 지속가능성(Sustainability)</h2>
+      </div>
+    </section>
+
+    <!-- 섹션 3 -->
+    <section>
+      <video muted autoplay loop playsinline>
+        <source
+          src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_3.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="txt">
+        <h1>
+          Awaken<br />
+          Imagination,<br />
+          Shape the Future
+        </h1>
+        <h2>꿈(Dream) 희망(Hope) 열정(Passion)</h2>
+      </div>
+    </section>
+
+    <!-- 섹션 4 -->
+    <section>
+      <video muted autoplay loop playsinline>
+        <source
+          src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_4.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="txt">
+        <h1>
+          Finally, A<br />
+          ‘big<br />Forest’ Is<br />Formed
+        </h1>
+        <h2>숲과 함께 자라는 나무, 태광이 닮고 싶은 이름입니다</h2>
+      </div>
+    </section>
+
+    <footer>
+      ⓒ 2025 TAEKWANG GROUP. All rights reserved.
+    </footer>
+  </body>
+</html>

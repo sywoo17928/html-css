@@ -87,6 +87,7 @@
       ul {
         list-style: none;
       }
+    
       a {
         text-decoration: none;
         color: #333;
@@ -96,11 +97,32 @@
         display: block;
         
       }
+      .menu {
+        font-family: "NanumSquareNeo";
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+      
+        
+  
+        gap: 40px;
+        
+      }
+      .menu > .item{
+        
+      }
+      
+      
 
       section {
+
         height: 100vh;
+
         position: sticky;
+        
         top: 0;
+       
       }
       section > video {
         width: 100%;
@@ -112,6 +134,7 @@
         top: 0;
       }
       section .txt {
+        font-family:"NanumSquareNeo" ;
         position: relative;
         z-index: 1;
         height: 100%;
@@ -151,15 +174,18 @@
               src="https://www.taekwanggroup.co.kr/resources/front/assets/img/ex/header-d0329d3d/header_logo.svg"
               alt=""
           /></a>
+          
         </li>
       </ul>
-      <ul>
+      <ul class="menu">
         <li><a href="#">태광기업</a></li>
         <li><a href="#">사업분야</a></li>
         <li><a href="#">지속가능경영</a></li>
         <li><a href="#">홍보센터</a></li>
         <li><a href="#">인재채용 <img src="https://www.taekwanggroup.co.kr/resources/front/assets/img/ex/header-d0329d3d/122610835_black.svg" alt=""></a></li>
-      </ul>
+        <li class="item"><a href="#">Business Groups</a></li>
+        <li class="item"><a href="#">KR</a></li>
+      </ul> 
       <section>
         <video muted autoplay loop>
           <source
