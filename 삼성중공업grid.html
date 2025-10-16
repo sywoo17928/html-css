@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .grid {
+      margin: 0 auto;
+      grid-auto-rows: 458px;
+      width: 1720px;
+      width: 95%;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 20px;
+    }
+    .grid .item {
+      padding-top: 130px;
+      padding-left: 40px;
+      color: #fff;
+      transition: 0.5s;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: 0.5s;
+    }
+    .grid .item::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .grid .item .txt {
+      position: relative;
+      z-index: 1;
+    }
+    .grid .item .txt1 {
+			background-size: ;
+			height: 207px;
+			padding-right: 200px;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 100%;
+			display: grid;
+			width: 570px;
+			top: 0;
+      color: #000;
+    }
+    .grid .item .txt1:nth-child(1) {
+      background-image: url(https://www.samsungshi.com/images/main/icon_source.png);
+    }
+    
+    .grid .item .txt1:nth-child(2) {
+      background-image: url(https://www.samsungshi.com/images/main/icon_source.png);
+    }
+    
+    .grid .item .txt1:nth-child(3) {
+      background-image: url(https://www.samsungshi.com/images/main/icon_source.png);
+    }
+    .grid .item:hover::before {
+      transform: scale(1.1);
+    }
+
+    .grid .item:nth-child(1) {
+      background-image: url(https://www.samsungshi.com/images/main/mRecruit_bg_01.jpg);
+    }
+    .grid .item:nth-child(2)::before {
+      background-image: url(https://www.samsungshi.com/images/main/mRecruit_bg_02.jpg);
+    }
+    .grid .item:nth-child(3)::before {
+      background-image: url(https://www.samsungshi.com/images/main/mRecruit_bg_03.jpg);
+    }
+    @media screen and (max-width: 1280px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid .item:nth-child(1) {
+        grid-column: 1 / span 2;
+      }
+    }
+    @media screen and (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .grid .item:nth-child(1) {
+        grid-column: 1;
+      }
+    }
+  </style>
+  <body>
+    <div class="grid">
+      <div class="item">
+        <div class="txt">
+          <h1>채용절차</h1>
+          <br />
+          <p>
+            글로벌 전문가 양성을 위한 <br />
+            신입사원부터 경력사원까지
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="txt">
+          <h1>채용공고</h1>
+          <br />
+          <p>
+            삼성인이 지향하는 열정과<br />
+            도전정신을 갖춘 인재를 찾습니다.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="txt">
+          <h1>회사절차</h1>
+          <br />
+          <p>
+            보다 질 높은 삶을 추구할 수 있도록<br />
+            적극적으로 지원합니다.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="txt1">
+          <h1>오픈소싱</h1>
+          <p>
+            내부 심의를 통해 선정된 업체는 당사의 <br />
+            아웃소싱 데이터베이스로 관리합니다.
+          </p>
+        </div>
+        <div class="txt1">
+          <h1>오픈소싱</h1>
+          <p>
+            내부 심의를 통해 선정된 업체는 당사의 <br />
+            아웃소싱 데이터베이스로 관리합니다.
+          </p>
+        </div>
+        <div class="txt1">
+          <h1>오픈소싱</h1>
+          <p>
+            내부 심의를 통해 선정된 업체는 당사의 <br />
+            아웃소싱 데이터베이스로 관리합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
