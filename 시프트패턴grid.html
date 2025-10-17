@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mostly Fluid</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+			#wrap {  
+				width: 100%;
+				max-width: 1200px;
+				height: 100vh;
+				display: grid;
+				grid-template-columns: 20% 80%;
+				grid-auto-rows: 1fr; 
+				margin: 0 auto;
+			
+			}
+			#wrap div:nth-child(1){
+				grid-row:  1 / span 2;
+				background: #000;
+			}
+			#wrap div:nth-child(2){
+				background-color: chartreuse;
+			}
+			#wrap div:nth-child(3){
+				background: #ff0000;
+			}
+			@media screen and (max-width:1024px) {
+				#wrap{grid-template-columns: 1fr;
+					grid-template-rows: 30% 50% 50%;
+				}
+				
+			}
+			#wrap div:nth-child(1){
+				grid-row: 1;
+			}
+		@media screen and (max-width:768px) {
+			#wrap{grid-template-columns: 1fr;
+					grid-template-rows: 20% 100% 100%;
+				}
+				
+			
+		}
+
+     
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div>Gnb영역</div>
+        <div>첫번째 content</div>
+        <div>두번째 content</div>
+      </section>
+    </div>
+  </body>
+</html>
