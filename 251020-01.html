@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 95%;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      #wrap header {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+      }
+      #wrap header .logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 12%;
+        height: 142px;
+        background: #aaa;
+      }
+      #wrap header nav {
+        width: 88%;
+        height: 80px;
+        background: #bbb;
+      }
+      #wrap section {
+        display: flex;
+      }
+      #wrap .con1 {
+        height: 440px;
+      }
+      #wrap .con1 > div:nth-child(1) {
+        background: #ccc;
+        width: 50%;
+      }
+      #wrap .con1 > div:nth-child(2) {
+        background: #ddd;
+        width: 28%;
+      }
+      #wrap .con1 > div:nth-child(3) {
+        background: #aaa;
+        width: 22%;
+      }
+      #wrap .con2 {
+        height: 270px;
+      }
+      #wrap .con2 > div:nth-child(1) {
+        background: #aaa;
+        width: 30%;
+      }
+      #wrap .con2 > div:nth-child(2) {
+        background: #bbb;
+        width: 30%;
+      }
+      #wrap .con2 > div:nth-child(3) {
+        background: #aaa;
+        width: 20%;
+      }
+      #wrap .con2 > div:nth-child(3) > div {
+        height: 50%;
+      }
+      #wrap .con2 > div:nth-child(3) > div:nth-child(1) {
+        background: #f00;
+      }
+      #wrap .con2 > div:nth-child(3) > div:nth-child(2) {
+        background: #f0f;
+      }
+      #wrap .con2 > div:nth-child(4) {
+        background: #bbb;
+        width: 20%;
+      }
+      footer {
+        height: 94px;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <p class="logo"></p>
+        <nav></nav>
+      </header>
+      <section class="con1">
+        <div>슬라이더영역</div>
+        <div>갤러리영역</div>
+        <div>인기검색어영역</div>
+      </section>
+      <section class="con2">
+        <div>최근글영역</div>
+        <div>인기글영역</div>
+        <div>
+          <div>배너영역</div>
+          <div></div>
+        </div>
+        <div>소셜네트워크영역</div>
+      </section>
+      <footer>푸터영역</footer>
+    </div>
+  </body>
+</html>
