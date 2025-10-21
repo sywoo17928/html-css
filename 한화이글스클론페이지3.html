@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한화이글스 클론</title>
+    <style>
+      @font-face {
+        font-family: "AlfaSlabOne";
+        src: url(./AlfaSlabOne-Regular.ttf);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        
+      }
+      body {
+        font-family: "AlfaSlabOne", sans-serif;
+      }
+
+      section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      video.bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      header {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      header ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+
+      header li {
+        position: relative;
+      }
+      header li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px 0;
+        border-radius: 10px;
+      }
+
+      li:hover .submenu {
+        display: block;
+      }
+      .submenu li {
+        padding: 5px 20px;
+      }
+      .submenu li a {
+        font-weight: normal;
+      }
+      li a:hover,
+      .submenu li a:hover {
+        color: orange;
+      }
+
+      @media (max-width: 768px) {
+        header ul {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        header img {
+          width: 45px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./video/movie_eagles.mp4" type="video/mp4" />
+      </video>
+      <header>
+        <ul class="logo">
+          <li>
+            <a href="#"
+              ><img
+                src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
+                alt="Eagles Logo"
+                width="92"
+            /></a>
+          </li>
+          <li>
+            <a href="#">EAGLES</a>
+            <ul class="submenu">
+              <li><a href="#">구단소개</a></li>
+              <li><a href="#">그룹사소개</a></li>
+              <li><a href="#">HISTORY</a></li>
+              <li><a href="#">대전 한화생명볼파크</a></li>
+              <li><a href="#">사회공헌</a></li>
+            </ul>
+          </li>
+          <li><a href="#">PLAYERS</a></li>
+          <li><a href="#">GAME</a></li>
+          <li><a href="#">FAN</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">TICKET</a></li>
+        </ul>
+        <ul class="txt">
+          <li><a href="#">좌석뷰 확인하기</a></li>
+          <li><a href="#">KO</a></li>
+          <li><a href="#">EN</a></li>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">JOIN US</a></li>
+        </ul>
+      </header>
+    </section>
+  </body>
+</html>

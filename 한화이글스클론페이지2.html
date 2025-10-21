@@ -7,8 +7,8 @@
 
     <style>
       @font-face {
-        font-family: "02HanwhaR";
-        src: url(./03HanwhaL.ttf);
+        font-family: "AlfaSlabOne";
+        src: url(./AlfaSlabOne-Regular.ttf);
       }
 			body{
 				overflow: hidden;
@@ -22,6 +22,7 @@
       }
       a {
         text-decoration: none;
+        font-size: 18px;
         color: #fff;
       }
 
@@ -38,7 +39,7 @@
       }
 
       header {
-        font-family: "02HanwhaR";
+        font-family: "AlfaSlabOne";
         position: relative;
         top: 0;
         left: 0;
@@ -46,9 +47,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.8);
         padding: 15px 0;
         border: 1px solid #b3b3b3;
+      }
+      .txt {
+        font-family: "AlfaSlabOne";
       }
 			
       header ul {
@@ -79,7 +83,7 @@
 				left: 0;
 				background: rgba(0, 0, 0, 0.8);
 				padding: 10px 0;
-				border-radius: 5px;
+				border-radius: 15px;
 			}
 			header li:hover .submenu {
 				display: block;
@@ -96,9 +100,9 @@
 					color: orange;
 				}
 
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         header ul {
-					background: url(/images/common/h_logo.png) no-repeat 0 0;
+					background: url(/images/common/h_logo.png);
           flex-wrap: wrap;
           gap: 20px;
         }
@@ -110,35 +114,46 @@
   </head>
 
   <body>
-    <video class="bg-video" autoplay muted loop playsinline>
-      <source src="./video/movie_eagles.mp4" type="video/mp4" />
-    </video>
-
-    <header>
-      <ul class="logo">
-        <li>
-          <a href="#">
-            <img
-              src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
-              alt="Eagles Logo"
-            />
-          </a>
-        </li>
-        <li ><a href="#">EAGLES</a>
-					<ul class="submenu">
-						<li><a href="">구단소개</a></li>
-						<li><a href="">그룹사소개</a></li>
-						<li><a href="">HISTORY</a></li>
-						<li><a href="">대전 한화생명볼파크</a></li>
-						<li><a href="">사회공헌</a></li>
-					</ul>
-				</li>
-        <li><a href="#">PLAYERS</a></li>
-        <li><a href="#">GAME</a></li>
-        <li><a href="#">FAN</a></li>
-        <li><a href="#">SHOP</a></li>
-        <li><a href="#">TICKET</a></li>
-      </ul>
-    </header>
-  </body>
+     <header>
+    <section>
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./video/movie_eagles.mp4" type="video/mp4" />
+      </video>
+     
+        <ul class="logo">
+          <li>
+            <a href="#">
+              <img
+                src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
+                alt="Eagles Logo"
+              />
+            </a>
+          </li>
+          <li><a href="#">EAGLES</a>
+                <ul class="submenu">
+                  <li><a href="">구단소개</a></li>
+                  <li><a href="">그룹사소개</a></li>
+                  <li><a href="">HISTORY</a></li>
+                  <li><a href="">대전 한화생명볼파크</a></li>
+                  <li><a href="">사회공헌</a></li>
+                </ul>
+              </li>
+          <li><a href="#">PLAYERS</a></li>
+          <li><a href="#">GAME</a></li>
+          <li><a href="#">FAN</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">TICKET</a></li>
+ 
+          <div class="txt">
+            <ul>
+              <li><a href="#">좌석뷰 확인하기</a></li>
+              <li><a href="#">KO</a></li>
+              <li><a href="#">EN</a></li>
+              <li><a href="#">LOGIN</a></li>
+              <li><a href="#">JOIN US</a></li>
+            </ul>
+          </header>
+        </body>
+      </header>
+    </section>
 </html>
