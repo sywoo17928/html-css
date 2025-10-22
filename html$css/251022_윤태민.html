@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GS파워</title>
+    <style>
+      @font-face {
+        font-family: "Pretendard";
+        src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff")
+          format("woff");
+        font-weight: 100;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: pretendard;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        color: #ccc;
+        position: relative;
+        margin: 80px;
+				right: 80px;
+      }
+
+      .header {
+        width: 1200px;
+        width: 90%;
+        text-align: center;
+      }
+
+      .txt {
+        text-align: left;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 48px;
+        font-size: 24px;
+        box-sizing: border-box;
+        height: 220px;
+				
+      }
+      .header h1 {
+        font-size: 38px;
+        margin: 80px;
+      }
+      .header .sub {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 50px;
+        column-gap: 40px;
+      }
+      .txt img {
+        width: 70px;
+        float: right;
+      }
+
+      .txt a::after {
+        font-size: 20px;
+        display: inline-block;
+        position: absolute;
+        content: "→";
+        width: 100px;
+        text-align: center;
+				
+      
+      }
+			 @media (max-width: 1024px) {
+        .header .sub {
+          grid-template-columns: 1fr;
+          row-gap: 30px;
+        }
+        .header h1 {
+          font-size: 28px;
+          margin: 40px;
+        }
+        .txt {
+          font-size: 18px;
+          padding: 28px;
+          height: auto;
+        }
+        a {
+          font-size: 13px;
+          margin: 40px;
+          right: 40px;
+        }
+        .txt img {
+          width: 60px;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .header h1 {
+          font-size: 24px;
+          margin: 30px;
+        }
+        .txt {
+          font-size: 16px;
+          padding: 20px;
+        }
+        a {
+          font-size: 12px;
+          margin: 20px;
+          right: 20px;
+        }
+        .txt img {
+          width: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>고객마당</h1>
+      <div class="sub">
+        <div class="txt">
+          <p>열요금정보</p>
+          <a href="">VIEW MORE</a>
+          <img
+            src="https://www.gspower.co.kr/pub/images/icon_customer_yard01.svg"
+            alt=""
+          />
+        </div>
+        <div class="txt">
+          <p>설비정보</p>
+          <a href="">VIEW MORE</a>
+          <img
+            src="https://www.gspower.co.kr/pub/images/icon_customer_yard02.svg"
+            alt=""
+          />
+        </div>
+        <div class="txt">
+          <p>교육정보</p>
+          <a href="">VIEW MORE</a>
+          <img
+            src="https://www.gspower.co.kr/pub/images/icon_customer_yard03.svg"
+            alt=""
+          />
+        </div>
+        <div class="txt">
+          <p>세대정보</p>
+          <a href="">VIEW MORE</a>
+          <img
+            src="https://www.gspower.co.kr/pub/images/icon_customer_yard04.svg"
+            alt=""
+          />
+        </div>
+        <div class="txt">
+          <p>자료실</p>
+          <a href="">VIEW MORE</a>
+          <img
+            src="https://www.gspower.co.kr/pub/images/icon_customer_yard05.svg"
+            alt=""
+          />
+        </div>
+        <div class="txt">
+          <p>공지사항</p>
+          <a href="">VIEW MORE</a>
+          <img
+            src="https://www.gspower.co.kr/pub/images/icon_customer_yard06.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
