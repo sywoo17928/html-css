@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
+        font-weight: 300;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff2);
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff2);
+        font-weight: 700;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff2);
+        font-weight: 800;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "NanumSquareNeo";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff2);
+        font-weight: 900;
+        font-display: swap;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+    
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .logo{
+        width: 100%;
+        display: block;
+        
+      }
+      .menu {
+        font-family: "NanumSquareNeo";
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+      
+        
+  
+        gap: 40px;
+        
+      }
+      /* .menu > .item{
+        
+      }
+       */
+      
+
+      section {
+
+        height: 100vh;
+
+        position: sticky;
+        
+        top: 0;
+       
+      }
+      section > video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+      section .txt {
+        font-family:"NanumSquareNeo" ;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+      }
+      section .txt h1 {
+        font-size: 70px;
+        color: #fff;
+        position: absolute;
+        right: 5%;
+        top: 20%;
+        line-height: 1;
+        font-family: "Poppins", sans-serif;
+      }
+      section .txt h2 {
+        color: #fff;
+        position: absolute;
+        left: 5%;
+        bottom: 10%;
+        font-family: "NanumSquareNeo";
+        font-weight: 700;
+      }
+
+      footer {
+        height: 1000px;
+        background: #000;
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul class="logo">
+        <li>
+          <a href="#"
+            ><img
+              src="https://www.taekwanggroup.co.kr/resources/front/assets/img/ex/header-d0329d3d/header_logo.svg"
+              alt=""
+          /></a>
+          
+        </li>
+      </ul>
+      <ul class="menu">
+        <li><a href="#">태광기업</a></li>
+        <li><a href="#">사업분야</a></li>
+        <li><a href="#">지속가능경영</a></li>
+        <li><a href="#">홍보센터</a></li>
+        <li><a href="#">인재채용 <img src="https://www.taekwanggroup.co.kr/resources/front/assets/img/ex/header-d0329d3d/122610835_black.svg" alt=""></a></li>
+        <li class="item"><a href="#">Business Groups</a></li>
+        <li class="item"><a href="#">KR</a></li>
+      </ul> 
+      <section>
+        <video muted autoplay loop>
+          <source
+            src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_1.mp4"
+          />
+        </video>
+        <div class="txt">
+          <h1>
+            Connection the<br />
+            Future with Light
+          </h1>
+          <h2>연결(Connection) 미래(Future) 빛(Light)</h2>
+        </div>
+      </section>
+      <section>
+        <video muted autoplay loop>
+          <source
+            src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_2.mp4"
+          />
+        </video>
+        <div class="txt">
+          <h1>
+            Add Value to<br />
+            Your Everyday
+          </h1>
+          <h2>가치(Value) 고객(Customer) 지속가능성(Sustainability)</h2>
+        </div>
+      </section>
+      <section>
+        <video muted autoplay loop>
+          <source
+            src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_3.mp4"
+          />
+        </video>
+        <div class="txt">
+          <h1>
+            Awaken<br />
+            Imagination,<br />Shape the Future
+          </h1>
+          <h2>꿈(Dream) 희망(Hope) 열정(Passion)</h2>
+        </div>
+      </section>
+      <section>
+        <video muted autoplay loop>
+          <source
+            src="https://www.taekwanggroup.co.kr/UPLOAD/MAIN_MOVIE/main_visual_4.mp4"
+          />
+        </video>
+        <div class="txt">
+          <h1>
+            Finally, A<br />
+            ‘big<br />Forest’ Is<br />Formed
+          </h1>
+          <h2>숲과 함께 자라는 나무, 태광이 닮고 싶은 이름입니다</h2>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>
