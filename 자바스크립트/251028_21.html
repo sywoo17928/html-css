@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+if (type === 'wall') {
+ctx.fillStyle = '#7a5739';
+} else if (type === 'bush') {
+ctx.fillStyle = '#4f8f3a';
+} else {
+ctx.fillStyle = '#9fd18a';
+}
+ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+}
+
+
+function drawPlayer() {
+const px = player.x * tileSize + 2;
+const py = player.y * tileSize + 2;
+ctx.fillStyle = '#3b5db0';
+ctx.fillRect(px, py + 8, 24, 22); // 몸통
+ctx.fillStyle = '#a4c8ff';
+ctx.beginPath();
+ctx.arc(px + 12, py + 6, 8, 0, Math.PI * 2);
+ctx.fill(); // 머리
+}
+
+
+function drawMap() {
+for (let y = 0; y < 16; y++) {
+for (let x = 0; x < 16; x++) {
+drawTile(x, y, map[y][x]);
+}
+}
+}
+
+
+function render() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+drawMap();
+drawPlayer();
+requestAnimationFrame(render);
+}
+
+
+window.addEventListener('keydown', (e) => {
+let nx = player.x;
+let ny = player.y;
+if (e.key === 'ArrowUp') ny--;
+if (e.key === 'ArrowDown') ny++;
+if (e.key === 'ArrowLeft') nx--;
+if (e.key === 'ArrowRight') nx++;
+
+
+if (map[ny][nx] !== 'wall') {
+player.x = nx;
+player.y = ny;
+}
+});
+
+
+render();
+</script>
+</body>
+</html>
