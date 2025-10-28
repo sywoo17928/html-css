@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <ul class="btn">
+      <li><a href="#">photo1</a></li>
+      <li><a href="#">photo2</a></li>
+      <li><a href="#">photo3</a></li>
+      <li><a href="#">photo4</a></li>
+    </ul>
+
+    <p class="con">
+      <img src="../Html5&CSS/images/photo1.jpg" alt="" />
+    </p>
+    <script>
+      let btn = document.querySelectorAll(".btn li");
+      btn.forEach(function (v, k, ar) {
+        v.onclick = function (e) {
+          e.preventDefault();
+          let imgSrc = document.querySelector(".con img").src;
+          document.querySelector(".con img").src =
+            "../Html5&CSS/images/photo" + (k + 1) + ".jpg";
+        };
+      });
+    </script>
+  </body>
+</html>

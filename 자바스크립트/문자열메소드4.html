@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>replace + slice (split 없이)</title>
+  </head>
+  <body>
+    <ul class="btn">
+      <li><a href="#">photo1</a></li>
+      <li><a href="#">photo2</a></li>
+      <li><a href="#">photo3</a></li>
+      <li><a href="#">photo4</a></li>
+    </ul>
+
+    <p class="con">
+      <img src="../Html5&CSS/images/photo1.jpg" alt="" />
+    </p>
+
+    <script>
+      const btn = document.querySelectorAll(".btn li");
+      const img = document.querySelector(".con img");
+
+      btn.forEach(function (v, k) {
+        v.onclick = function (e) {
+          e.preventDefault();
+          let imgSrc = img.getAttribute("src");
+          let newSrc = imgSrc.replace(imgSrc.slice(-5, -4), k + 1);
+
+          img.setAttribute("src", newSrc);
+        };
+      });
+    </script>
+  </body>
+</html>
