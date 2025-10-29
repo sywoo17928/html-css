@@ -4,161 +4,237 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>한화이글스</title>
-
     <style>
       @font-face {
         font-family: "01HanwhaB";
-        src: url(./01HanwhaB.ttf);
+        src: url("./01HanwhaB.ttf");
       }
-			body{
-				overflow: hidden;
-			}
+
       * {
         margin: 0;
         padding: 0;
       }
-      ul {
-        list-style: none;
+
+      html,
+      body {
+        overflow: hidden;
+        height: 100%;
       }
-      a {
-        text-decoration: none;
-        font-size: 18px;
+
+      body {
+        background-color: #0a1320;
+        font-family: "01HanwhaB", sans-serif;
         color: #fff;
       }
 
-      video.bg-video {
-				display: flex;
-				/* margin: 0;
-				padding: 0; */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        object-fit: cover;
-        z-index: -1;
-      }
-
       header {
-        font-family: "01HanwhaB";
-        position: relative;
-        top: 0;
-        left: 0;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 15px 0;
-        border: 1px solid #b3b3b3;
-        
+        height: 80px;
+        border-bottom: 1px solid #fff;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 0 40px;
+        position: relative;
+        z-index: 100;
+        overflow: visible;
       }
-      .txt {
-        font-family: "01HanwhaB";
-      }
-			
-      header ul {
+
+      
+      .header-left {
         display: flex;
         align-items: center;
         gap: 40px;
       }
 
-      header img {
-				font-size: 23px;
-        width: 92px;
-				height: 60px;
+      .logo img {
+        width: 90px;
+        height: auto;
         vertical-align: middle;
       }
 
-      header li {
-        font-weight:bold;
-        font-size: 18px;
+      .main-menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        position: relative;
       }
 
-      header li a:hover {
+      .main-menu li {
+        list-style: none;
+        position: relative;
+      }
+
+      .main-menu a {
+        text-decoration: none;
+        color: #ddd;
+        font-size: 18px;
+        transition: 0.2s;
+      }
+
+      .main-menu a:hover {
         color: orange;
       }
-			header .submenu {
-				display: none;
-				position: absolute;
-				top: 100%;
-				left: 0;
-				background: rgba(0, 0, 0, 0.8);
-				padding: 10px 0;
-				border-radius: 15px;
-			}
-      
-			header li:hover .submenu {
-				display: block;
-			}
-			header .submenu li {
-				width: 150px;
-				padding: 5px 20px;
-			}
-			header .submenu li a {
-				color: #fff;
-				font-weight: normal;
-			}
-				header .submenu li a:hover {
-					color: orange;
-				}
+
+
+      .submenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 40px;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 12px 40px;
+        border-top: 2px solid orange;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 50;
+        width: max-content;
+        min-width: 100%;
+      }
+
+      .submenu li {
+        list-style: none;
+      }
+
+      .submenu a {
+        color: #fff;
+        white-space: nowrap;
+        font-size: 16px;
+      }
+
+      .submenu a:hover {
+        color: orange;
+      }
+
+      .main-menu li:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .right-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 15px;
+      }
+
+      .right-menu a {
+        color: #b3b3b3;
+        text-decoration: none;
+      }
+
+      .right-menu a:hover {
+        color: orange;
+      }
 
       @media (max-width: 1024px) {
-        header ul {
-					background: url(/images/common/h_logo.png);
-          flex-wrap: wrap;
-          gap: 20px;
+        header {
+          flex-direction: column;
+          height: auto;
+          padding: 20px;
         }
-        header img {
-          width: 45px;
+
+        .header-left {
+          flex-direction: column;
+        }
+
+        .main-menu {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .submenu {
+          position: static;
+          flex-direction: column;
+          background: #111;
+          border-top: none;
+          padding: 10px 0;
         }
       }
     </style>
   </head>
 
   <body>
-     <header>
+    <header>
+
+      <div class="header-left">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
+              alt="Eagles Logo"
+            />
+          </a>
+        </div>
+
+        <ul class="main-menu">
+          <li>
+            <a href="#">EAGLES</a>
+            <ul class="submenu">
+              <li><a href="#">구단소개</a></li>
+              <li><a href="#">그룹사소개</a></li>
+              <li><a href="#">HISTORY</a></li>
+              <li><a href="#">대전 한화생명 볼파크</a></li>
+              <li><a href="#">사회공헌</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">PLAYERS</a>
+            <ul class="submenu">
+              <li><a href="#">코칭스텝</a></li>
+              <li><a href="#">투수</a></li>
+              <li><a href="#">포수</a></li>
+              <li><a href="#">내야수</a></li>
+              <li><a href="#">외야수</a></li>
+              <li><a href="#">군입대 선수</a></li>
+              <li><a href="#">응원단</a></li>
+              <li><a href="#">STAFF</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">GAME</a>
+            <ul class="submenu">
+              <li><a href="#">1군 경기일정</a></li>
+              <li><a href="#">퓨처스 경기일정</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">FAN</a>
+            <ul class="submenu">
+              <li><a href="#">구단경기</a></li>
+              <li><a href="#">키즈클럽</a></li>
+              <li><a href="#">펜 타임즈</a></li>
+              <li><a href="#">갤러리</a></li>
+              <li><a href="#">이글스 아카이브</a></li>
+            </ul>
+          </li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">TICKET</a></li>
+        </ul>
+      </div>
+
+    
+      <div class="right-menu">
+        <a href="#">좌석뷰 확인하기</a>
+        <a href="#">KO</a> |
+        <a href="#">EN</a>
+        <a href="#">LOGIN</a>
+        <a href="#">JOIN US</a>
+      </div>
+    </header>
+
     <section>
       <video class="bg-video" autoplay muted loop playsinline>
         <source src="./video/movie_eagles.mp4" type="video/mp4" />
       </video>
-     
-        <ul class="logo">
-          <li>
-            <a href="#">
-              <img
-                src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
-                alt="Eagles Logo"
-              />
-            </a>
-          </li>
-          <li><a href="#">EAGLES</a>
-                <ul class="submenu">
-                  <li><a href="#">구단소개</a></li>
-                  <li><a href="#">그룹사소개</a></li>
-                  <li><a href="#">HISTORY</a></li>
-                  <li><a href="#">대전 한화생명볼파크</a></li>
-                  <li><a href="#">사회공헌</a></li>
-                </ul>
-              </li>
-          <li><a href="#">PLAYERS</a></li>
-          <li><a href="#">GAME</a></li>
-          <li><a href="#">FAN</a></li>
-          <li><a href="#">SHOP</a></li>
-          <li><a href="#">TICKET</a></li>
- 
-          <div class="txt">
-            <ul>
-              <li><a href="#">좌석뷰 확인하기</a></li>
-              <li><a href="#">KO</a></li>
-              <li><a href="#">EN</a></li>
-              <li><a href="#">LOGIN</a></li>
-              <li><a href="#">JOIN US</a></li>
-            </ul>
-          </header>
-        </body>
-        <script>
-          
-        </script>
-      </header>
     </section>
+  </body>
 </html>
