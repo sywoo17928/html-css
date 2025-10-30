@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button>빨강</button>
+	<button>노랑</button>
+	<button>파랑</button>
+	<button>그린</button>
+	<button>핑크</button>
+	<script>
+		let color = ["red","yellow","blue","green","pink",]
+		let btn = document.querySelectorAll("button");
+		btn.forEach(function (v,k) {
+			v.onclick = function(){
+				document.querySelector("body").style.backgroundColor = color[k];
+			};
+		});
+	</script>
+</body>
+</html>
