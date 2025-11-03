@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>한화이글스</title>
-    <style>
-      @font-face {
-        font-family: "01HanwhaB";
-        src: url("./01HanwhaB.ttf");
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      html,
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구단소개</title>
+  <style>
+    * { margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    html,
       body {
-        margin: 0;
-        padding: 0;
-
-        overflow-x: hidden;
-        overflow-y: auto;
         height: 100%;
       }
 
@@ -29,20 +20,7 @@
         background-color: #0a1320;
         font-family: "01HanwhaB", sans-serif;
         color: #fff;
-      }
-      section {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      .bg-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;z-index: -1;
+        overflow-x: hidden;
       }
 
       header {
@@ -54,15 +32,17 @@
         border-bottom: 1px solid #fff;
         background: rgba(0, 0, 0, 0.6);
         padding: 0 40px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
         z-index: 100;
-        overflow: visible;
+   
       }
 
       .header-left {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 60px;
       }
 
       .logo img {
@@ -71,27 +51,40 @@
         vertical-align: middle;
       }
 
-      .main-menu {
+      .main-menu {   
+ 
         display: flex;
         align-items: center;
         gap: 40px;
         position: relative;
-      }
+        width: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 12px 40px;
 
-      .main-menu li {
+        margin: 0;
+        border-top: none;
+
+        z-index: 50;
+      }
+       .main-menu li {
         list-style: none;
         position: relative;
       }
 
       .main-menu a {
         text-decoration: none;
-        color: #ddd;
+        color: #fff;
         font-size: 18px;
         transition: 0.2s;
       }
 
       .main-menu a:hover {
         color: orange;
+      }
+      .main-menu li:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
       }
 
       .submenu {
@@ -100,26 +93,21 @@
         justify-content: flex-start;
         gap: 40px;
         position: absolute;
-        top: calc(100% + 1px);
+        top: 55px;
         left: 0;
-        right: 0;
         background: rgba(0, 0, 0, 0.6);
-        padding: 12px 40px;
-        border-top: 2px solid orange;
+        padding: 12px 20px;
+        border-top: 2px solid #000;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 50;
-        width: max-content;
-        min-width: 100%;
+        transform: translateY(0);
+        transition: all 0.3s ease;    
+             background-image: url(../자바스크립트/images/bg_header_eagles.jpg);
       }
-
-      .submenu li {
+        .submenu li {
         list-style: none;
       }
-
-      .submenu a {
+          .submenu a {
         color: #fff;
         white-space: nowrap;
         font-size: 16px;
@@ -127,12 +115,6 @@
 
       .submenu a:hover {
         color: orange;
-      }
-
-      .main-menu li:hover .submenu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
       }
 
       .right-menu {
@@ -148,37 +130,12 @@
       }
 
       .right-menu a:hover {
-        color: orange;
+        color: #fff;
       }
-
-      @media (max-width: 1024px) {
-        header {
-          flex-direction: column;
-          height: auto;
-          padding: 20px;
-        }
-
-        .header-left {
-          flex-direction: column;
-        }
-
-        .main-menu {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .submenu {
-          position: static;
-          flex-direction: column;
-          background: #111;
-          border-top: none;
-          padding: 10px 0;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
+  </style>
+</head>
+<body>
+    <body>
     <header>
       <div class="header-left">
         <div class="logo">
@@ -244,11 +201,6 @@
         <a href="#">JOIN US</a>
       </div>
     </header>
-
-    <section>
-      <video class="bg-video" autoplay muted loop playsinline>
-        <source src="./video/movie_eagles.mp4" type="video/mp4" />
-      </video>
-    </section>
-  </body>
+  
+</body>
 </html>

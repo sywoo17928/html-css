@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo">이벤트발생</p>
+    <p id="con"></p>
+    <script>
+      document.querySelector("#demo").onclick = () => {
+        document.querySelector("#con").innerText = "이벤트발생함";
+      };
+      document.querySelector("#demo").addEventListener("click", () => {
+        document.querySelector("#con").innerText = "이벤트발생함";
+      });
+      /*document.querySelector("#demo").onclick = function () {
+        document.querySelector("#con").innerText = "이벤트발생함";
+      };
+      document.querySelector("#demo").onmouseenter = function () {
+        document.querySelector("#con").innerText = "이벤트발생함";
+      };*/
+      /*document.querySelector("#demo").addEventListener("click", function () {
+        document.querySelector("#con").innerText = "이벤트발생함";
+      });*/
+      /*function myfnc() {
+        document.querySelector("#con").innerText = "이벤트발생함";
+      }
+      document.querySelector("#demo").addEventListener("click", function () {
+        myfnc();
+      });
+      document.querySelector("#demo").addEventListener("mouseenter", myfnc);*/
+    </script>
+  </body>
+</html>

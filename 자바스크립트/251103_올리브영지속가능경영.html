@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .list {
+        width: 95%;
+        max-width: 1420px;
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+      .list li {
+        flex: 1;
+        cursor: pointer;
+      }
+      .list li img {
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>
+        <img
+          src="https://corp.oliveyoung.com/img/sustain/img_sustain_pc_1.jpg"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          src="https://corp.oliveyoung.com/img/sustain/img_sustain_pc_2.jpg"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          src="https://corp.oliveyoung.com/img/sustain/img_sustain_pc_3.jpg"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          src="https://corp.oliveyoung.com/img/sustain/img_sustain_pc_4.jpg"
+          alt=""
+        />
+      </li>
+    </ul>
+    <script>
+      //https://corp.oliveyoung.com/img/sustain/img_sustain_pc_hover_1_1.jpg
+  
+      document.querySelectorAll(".list li").forEach((v, k, ar) => {
+        v.onmouseenter = () => {
+          ar.forEach(function (v, i) {
+            v.querySelector(
+              "img"
+            ).src = `https://corp.oliveyoung.com/img/sustain/img_sustain_pc_hover_${
+              k + 1
+            }_${i + 1}.jpg`;
+          });
+        };
+        v.onmouseleave = () => {
+          ar.forEach(function (v, i) {
+            v.querySelector(
+              "img"
+            ).src = `https://corp.oliveyoung.com/img/sustain/img_sustain_pc_${
+              i + 1
+            }.jpg`;
+          });
+        };
+      });
+    </script>
+  </body>
+</html>

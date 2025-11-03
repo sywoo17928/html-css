@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+			.over{
+				width: 20%;
+				height: 150px;
+				margin: 20px;
+				background: #ccc;
+			}
+			.in {
+				width: 60%;height: 60%;background: #fc0;
+				margin: 10px auto;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="over">
+      <p>0</p>
+      <p>move your mouse</p>
+      <div class="in">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+    </div>
+		<script>
+			let i=0;
+			let j=0;
+			document.querySelector(".over").onmouseenter =function (){
+			document.querySelector(".over>p:first-child").innerText =
+			"mouseenter";
+				document.querySelector(".over>p:nth-child(2)").innerText = i ++
+			document.querySelector(".in>p:first-child").innerText ="mouseenter"
+				document.querySelector(".in>p:nth-child(2)").innerText = j ++
+			};
+			// 		document.querySelector(".over").onmouseleave =function (){
+			// document.querySelector(".in>p:first-child").innerText =
+			// "mouseleave";
+			// 		};
+			
+		</script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+     
+        
+    </style>
+  </head>
+  <body>
+		<p id="demo">클릭이벤트</p>
+		<p id="con"></p>
+		<input type="text"id="name"value="123456">
+    <script>
+			/*document.querySelector("#demo").onclick = function(){
+				document.querySelector("con").innerText = "클릭하였습니다";
+			};*/
+			document.querySelector("#demo").addEventListener("click",function(){
+				document.querySelector("con").innerText = "클릭하였습니다";
+			});
+			document.querySelector("#name").onchange = function () {
+				this.value = this.value.toUpperCase();
+			};
+    
+    </script>
+  </body>
+</html>
