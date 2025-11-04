@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* body {
+        height: 2000px;
+      } */
+      /* #navbar {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        background: rgba(0, 0, 0, 0.5);
+
+        transition: 1s;
+      } */
+      #bar {
+        background: #0bd;
+        position: fixed;
+        height: 10px;
+        left: 0;
+        top: 0;
+      }
+      section {
+        height: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <section></section>
+    <script>
+      function myscroll() {
+        let scrolled = window.scrollY;
+        //스크롤양
+        let ht = document.documentElement.scrollHeight;
+        //페이지전체높이
+        let viewht = document.documentElement.clientHeight;
+        //표시영역높이
+        console.log(ht);
+        console.log(viewht);
+        let wd = (scrolled / (ht - viewht)) * 100;
+        console.log(wd);
+        document.querySelector("#bar").style.width = `${wd}%`;
+      }
+      window.onscroll = function () {
+        myscroll();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        cursor: pointer;
+      }
+      .customPinter {
+        position: fixed;
+        width: 60px;
+        left: -200px;
+        top: -200px;
+        height: 60px;
+        background-color: rgba(255, 0, 0, 0.5);
+        background-repeat: no-repeat;
+        z-index: 9999;
+        border-radius: 50%;
+        pointer-events: none;
+        /* 해당요소가 마우스 이벤트를 받지 않도록 무시하는속성 */
+        animation: move 2s infinite;
+      }
+      @keyframes move {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(2);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="customPinter"></ul>
+    <script>
+      let cursor = document.querySelector(".customPinter");
+      document.onmousemove = function (e) {
+        //top=Y
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+      };
+      document.querySelectorAll("#info li").forEach(function (v) {
+        v.onmouseenter = function () {};
+        v.onmouseleave = function () {};
+      });
+    </script>
+  </body>
+</html>

@@ -14,13 +14,17 @@
     html,
       body {
         height: 100%;
+        
+          
       }
 
       body {
         background-color: #0a1320;
         font-family: "01HanwhaB", sans-serif;
         color: #fff;
-        overflow-x: hidden;
+        overflow-x: hidden; 
+        background-image: url(../자바스크립트/images/bg_header_eagles.jpg);
+        background-size: cover;
       }
 
       header {
@@ -36,7 +40,7 @@
         top: 0;
         left: 0;
         z-index: 100;
-   
+        box-sizing: border-box;
       }
 
       .header-left {
@@ -57,7 +61,7 @@
         align-items: center;
         gap: 40px;
         position: relative;
-        width: 100vh;
+        width: 100%;
         background: rgba(0, 0, 0, 0.8);
         padding: 12px 40px;
 
@@ -102,7 +106,7 @@
         visibility: hidden;
         transform: translateY(0);
         transition: all 0.3s ease;    
-             background-image: url(../자바스크립트/images/bg_header_eagles.jpg);
+           
       }
         .submenu li {
         list-style: none;
@@ -118,6 +122,7 @@
       }
 
       .right-menu {
+        
         display: flex;
         align-items: center;
         gap: 20px;
@@ -132,6 +137,66 @@
       .right-menu a:hover {
         color: #fff;
       }
+        section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+        .social-media {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+      }
+        .social-media img {
+        display: block;
+        position: relative;
+        width: 56px;
+        height: 56px;
+        border: 1px solid #000;
+        background-color: #000;
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+        @media (max-width: 1024px) {
+        header {
+          flex-direction: column;
+          height: auto;
+          padding: 20px;
+        }
+
+        .header-left {
+          flex-direction: column;
+        }
+
+        .main-menu {
+          flex-direction: column;
+          width: 100%;
+          margin-left: 0;
+          padding: 10px 0;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .submenu {
+          position: static;
+          flex-direction: column;
+          background: #111;
+          border-top: none;
+          padding: 10px 0;
+        }
+
+        section {
+          margin-top: 0;
+        }
+      }
   </style>
 </head>
 <body>
@@ -139,7 +204,7 @@
     <header>
       <div class="header-left">
         <div class="logo">
-          <a href="#">
+          <a href="../html&css/한화이글스클론페이지3.html">
             <img
               src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
               alt="Eagles Logo"
@@ -151,7 +216,7 @@
           <li>
             <a href="#">EAGLES</a>
             <ul class="submenu">
-              <li><a href="#">구단소개</a></li>
+              <li><a href="../html&css/한화이글스클론페이지2.html">구단소개</a></li>
               <li><a href="#">그룹사소개</a></li>
               <li><a href="#">HISTORY</a></li>
               <li><a href="#">대전 한화생명 볼파크</a></li>
@@ -194,7 +259,7 @@
       </div>
 
       <div class="right-menu">
-        <a href="#">좌석뷰 확인하기</a>
+        <a href="https://www.hanwhaeagles.co.kr/resources/vr/index.html">좌석뷰 확인하기</a>
         <a href="#">KO</a> |
         <a href="#">EN</a>
         <a href="#">LOGIN</a>

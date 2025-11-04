@@ -5,15 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>한화이글스</title>
     <style>
-      @font-face {
-        font-family: "01HanwhaB";
-        src: url("./01HanwhaB.ttf");
-      }
-
       * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
 
       html,
@@ -41,6 +35,7 @@
         top: 0;
         left: 0;
         z-index: 100;
+        box-sizing: border-box;
       }
 
       .header-left {
@@ -61,12 +56,10 @@
         gap: 40px;
         position: relative;
         width: 100vh;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 12px 40px;
 
+        padding: 12px 40px;
         margin: 0;
         border-top: none;
-
         z-index: 50;
       }
 
@@ -176,6 +169,38 @@
         object-fit: cover;
         transform: translate(-50%, -50%);
       }
+      .auto-slide {
+        overflow: hidden;
+        width: 100%;
+        background: #000;
+        padding: 40px 0;
+      }
+
+      .slide-track {
+        display: flex;
+        gap: 20px;
+      }
+
+      .slide-track img {
+        width: 712px;
+        height: 680px;
+        object-fit: cover;
+        filter: brightness(60%);
+        transition: filter 0.3s ease;
+      }
+
+      .slide-track img:hover {
+        filter: brightness(100%);
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 
       @media (max-width: 1024px) {
         header {
@@ -228,7 +253,9 @@
           <li>
             <a href="#">EAGLES</a>
             <ul class="submenu">
-              <li><a href="#">구단소개</a></li>
+              <li>
+                <a href="../html&css/한화이글스클론페이지2.html">구단소개</a>
+              </li>
               <li><a href="#">그룹사소개</a></li>
               <li><a href="#">HISTORY</a></li>
               <li><a href="#">대전 한화생명 볼파크</a></li>
@@ -271,7 +298,9 @@
       </div>
 
       <div class="right-menu">
-        <a href="#">좌석뷰 확인하기</a>
+        <a href="https://www.hanwhaeagles.co.kr/resources/vr/index.html"
+          >좌석뷰 확인하기</a
+        >
         <a href="#">KO</a> |
         <a href="#">EN</a>
         <a href="#">LOGIN</a>
@@ -300,25 +329,60 @@
         <a href="https://www.facebook.com/hanwhaeagles.news/"
           ><img
             src="https://www.hanwhaeagles.co.kr/images/common/ico_facebook.png"
-            alt="facebook"
+            alt="facebook 바로가기"
         /></a>
         <a
           href="https://www.instagram.com/accounts/login/?next=%2Fhanwhaeagles_soori%2F&source=omni_redirect"
           ><img
             src="https://www.hanwhaeagles.co.kr/images/common/ico_instagram.png"
-            alt="Instagram"
+            alt="Instagram 바로가기"
         /></a>
         <a href="https://x.com/hoodi_thespace/"
           ><img
             src="https://www.hanwhaeagles.co.kr/images/common/ico_twitter.png"
-            alt="X"
+            alt="X 바로가기"
         /></a>
         <a href="https://kr.pinterest.com/hanwhaeagles1985/_saved/"
           ><img
             src="https://www.hanwhaeagles.co.kr/images/common/ico_pinterest.png"
-            alt="Pinterest"
+            alt="Pinterest 바로가기"
         /></a>
       </div>
     </section>
+    <section class="auto-slide">
+      <div class="slide-track">
+        <img src="../images/류현진1.png" alt="" />
+        <img src="../images/노시환2.png" alt="" />
+        <img src="../images/문동주2.png" alt="" />
+        <img src="../images/채은성2.png" alt="" />
+        <img src="../images/문동주.png" alt="" />
+        <img src="../images/노시환.png" alt="" />
+        <img src="../images/류현진2.png" alt="" />
+        <img src="../images/채은성.png" alt="" />
+
+        <img src="../images/류현진1.png" alt="" />
+        <img src="../images/노시환2.png" alt="" />
+        <img src="../images/문동주2.png" alt="" />
+        <img src="../images/채은성2.png" alt="" />
+        <img src="../images/문동주.png" alt="" />
+        <img src="../images/노시환.png" alt="" />
+        <img src="../images/류현진2.png" alt="" />
+        <img src="../images/채은성.png" alt="" />
+      </div>
+    </section>
+    <script>
+      const track = document.getElementById("slideTrack");
+      let scrollAmount = 0;
+
+      function slide() {
+        scrollAmount -= 1; // 이동 속도 조절
+        track.style.transform = `translateX(${scrollAmount}px)`;
+
+      }
+
+      // 처음 이미지 세트 복제 (무한 루프 효과)
+      track.innerHTML += track.innerHTML;
+      requestAnimationFrame(slide);
+    </script>
   </body>
 </html>

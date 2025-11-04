@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+			html{
+				cursor: pointer;
+			}
+      .customPinter {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        background-image: url(https://cdn.imweb.me/upload/S20240112577c82953a84f/19e96870be74c.png);
+        background-repeat: no-repeat;
+        background-size: 45px 57px;
+        z-index: 9999;
+        border: 1px solid;
+				background-position: right bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="customPinter"></div>
+		<script>
+			let cursor =document.querySelector(".customPinter");
+			document.onmousemove = function(e){
+				//top=Y
+				cursor.style.top = e.clientY + "px";
+				cursor.style.left = e.clientX + "px";
+			}
+		</script>
+  </body>
+</html>
