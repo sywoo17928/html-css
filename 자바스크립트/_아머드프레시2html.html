@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hanwha Eagles Scroll Video</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; 
+        background: black;
+      }
+
+      video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.6s ease; /* 부드러운 페이드 */
+      }
+
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="videoA" muted playsinline preload="auto"></video>
+    <video id="videoB" muted playsinline preload="auto" class="hidden"></video>
+
+    <script>
+      const videos = {
+        intro:
+          "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_1_intro.mp4",
+        loop2:
+          "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_2_loop.mp4",
+        v3: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_3.mp4",
+        loop4:
+          "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_4_loop.mp4",
+        v5: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_5.mp4",
+        loop6:
+          "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_6_loop.mp4",
+        r3: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_R_3.mp4",
+        r2: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_R_2.mp4",
+      };
+
+      const forwardSeq = [
+        [videos.intro, videos.loop2],
+        [videos.v3, videos.loop4],
+        [videos.v5, videos.loop6],
+      ];
+
+      const reverseSeq = [
+        [videos.r3, videos.loop4],
+        [videos.r2, videos.loop2],
+      ];
+
+      const videoA = document.getElementById("videoA");
+      const videoB = document.getElementById("videoB");
+
+      let currentIndex = 0;
+      let usingA = true;
+      let firstPlayed = false;
+      let scrollLock = false;
+
+      // 미리 로드 (버퍼링 방지)
+      Object.values(videos).forEach((src) => {
+        const v = document.createElement("video");
+        v.src = src;
+        v.preload = "auto";
+      });
+
+      function crossFadePlay(fromSrc, toSrc) {
+        const active = usingA ? videoA : videoB;
+        const next = usingA ? videoB : videoA;
+
+        next.src = fromSrc;
+        next.currentTime = 0;
+        next.classList.remove("hidden");
+        next.loop = false;
+        next.play();
+
+        next.onended = () => {
+          next.src = toSrc;
+          next.loop = true;
+          next.play();
+        };
+
+        active.classList.add("hidden");
+        usingA = !usingA;
+      }
+
+      function scrollHandler(e) {
+        if (!firstPlayed) return;
+        if (scrollLock) return; // 과도한 휠 방지
+        scrollLock = true;
+        setTimeout(() => (scrollLock = false), 1200);
+
+        if (e.deltaY > 0) {
+          // ↓ 스크롤 내릴 때
+          if (currentIndex < forwardSeq.length - 1) {
+            currentIndex++;
+            const [play1, play2] = forwardSeq[currentIndex];
+            crossFadePlay(play1, play2);
+          }
+        } else if (e.deltaY < 0) {
+          // ↑ 스크롤 올릴 때
+          if (currentIndex > 0) {
+            currentIndex--;
+            const [rev1, rev2] =
+              reverseSeq[reverseSeq.length - currentIndex] || reverseSeq[0];
+            crossFadePlay(rev1, rev2);
+          }
+        }
+      }
+
+      // 첫 휠 입력 시 재생 시작 (autoplay 제한 해결)
+      function startPlayback() {
+        if (firstPlayed) return;
+        firstPlayed = true;
+
+        videoA.src = videos.intro;
+        videoA.play();
+        videoA.onended = () => {
+          videoA.src = videos.loop2;
+          videoA.loop = true;
+          videoA.play();
+        };
+
+        window.addEventListener("wheel", scrollHandler, { passive: false });
+      }
+
+      document.body.addEventListener("wheel", startPlayback, { once: true });
+    </script>
+  </body>
+</html>

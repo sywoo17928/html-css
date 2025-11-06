@@ -1,35 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      
-    </style>
-  </head>
-  <body>
-    <ul>
-      <li>
-        <a href=""
-          ><img
-            src="https://m.media-amazon.com/images/I/61vO1bYfU9L._SX3000_.jpg"
-            alt=""
-        /></a>
-      </li>
-      <span> <a href="#">모두</a></span>
-      <span> <a href="#">오늘의 딜</a></span>
-      <span> <a href="#">Prime video</a></span>
-      <span> <a href="#">레지스트리</a></span>
-      <span> <a href="#">기프트 카드</a></span>
-      <span> <a href="#">고객서비스</a></span>
-      <span> <a href="#">판매</a></span>
-      <span> <a href="#">무료 해외 배송 받기</a></span>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>한화이글스 영상 전환</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+  }
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s ease;
+  }
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
 
-    </ul>
-  </body>
+<video id="videoA" muted playsinline preload="auto"></video>
+<video id="videoB" muted playsinline preload="auto" class="hidden"></video>
+
+<script>
+const videos = {
+  intro: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_1_intro.mp4",
+  loop2: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_2_loop.mp4",
+  v3: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_3.mp4",
+  loop4: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_4_loop.mp4",
+  v5: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_5.mp4",
+  loop6: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_6_loop.mp4",
+  r3: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_R_3.mp4",
+  r2: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_R_2.mp4",
+};
+
+const seq = [
+  [videos.intro, videos.loop2],
+  [videos.v3, videos.loop4],
+  [videos.v5, videos.loop6]
+];
+const reverseSeq = [
+  [videos.r3, videos.loop4],
+  [videos.r2, videos.loop2]
+];
+
+let currentIndex = 0;
+let currentVideo = 0; // 0 = A, 1 = B
+
+const videoA = document.getElementById('videoA');
+const videoB = document.getElementById('videoB');
+
+function preloadVideo(url) {
+  const v = document.createElement('video');
+  v.src = url;
+  v.preload = 'auto';
+}
+
+Object.values(videos).forEach(preloadVideo);
+
+function playSequence(from, to) {
+  const active = currentVideo === 0 ? videoA : videoB;
+  const next = currentVideo === 0 ? videoB : videoA;
+  next.src = from;
+  next.currentTime = 0;
+  next.classList.remove('hidden');
+  next.play();
+
+  next.onended = () => {
+    next.src = to;
+    next.loop = true;
+    next.play();
+  };
+
+  // crossfade
+  active.classList.add('hidden');
+  currentVideo = 1 - currentVideo;
+}
+
+function scrollHandler(e) {
+  if (e.deltaY > 0) { // scroll down
+    if (currentIndex < seq.length - 1) {
+      currentIndex++;
+      const [a, b] = seq[currentIndex];
+      playSequence(a, b);
+    }
+  } else if (e.deltaY < 0) { // scroll up
+    if (currentIndex > 0) {
+      currentIndex--;
+      const [a, b] = reverseSeq[reverseSeq.length - 1 - currentIndex] || reverseSeq[0];
+      playSequence(a, b);
+    }
+  }
+}
+
+window.addEventListener('wheel', scrollHandler, { passive: true });
+
+// 처음 시작
+videoA.src = videos.intro;
+videoA.play();
+videoA.onended = () => {
+  videoA.src = videos.loop2;
+  videoA.loop = true;
+  videoA.play();
+};
+</script>
+
+</body>
 </html>

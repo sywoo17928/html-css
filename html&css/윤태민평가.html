@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slices - Almond Base</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        color: #c68c2d;
+        padding: 20px;
+      }
+
+      h2 {
+        margin-bottom: 5px;
+      }
+
+      .toggle {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        user-select: none;
+        margin: 10px 0;
+      }
+
+      .content-wrapper {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        background: #fff;
+        border-top: 1px solid #c68c2d;
+        box-sizing: border-box;
+        border-bottom: 1px solid #c68c2d;
+        margin-bottom: 10px;
+      }
+
+      .content-wrapper.open {
+        max-height: 1000px;
+        padding: 15px 0;
+      }
+
+      .content {
+        color: #333;
+        padding: 0 10px;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #c68c2d;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>RETAIL</h2>
+    <h3>Slices - Almond Base</h3>
+    <hr />
+
+    <div class="toggle">+ AMERICAN</div>
+    <div class="content-wrapper">
+			<img src="https://d29wx3mrk1ysd0.cloudfront.net/_img/sub231114/SLICES-ALMONDBASE-AMERICAN-pc.jpg" alt="">
+      <div class="content">
+        <p>
+          <strong>제품 설명:</strong> Mild cheddar flavor with subtle hints of
+          tanginess and creaminess.
+        </p>
+        <p>
+          <strong>성분:</strong> Fermented Almond Beverage, Coconut Oil,
+          Modified Starch Mix, Almond Protein Powder...
+        </p>
+        <p>
+          <strong>영양정보:</strong> Total Fat 5g, Sodium 200mg, Calories 70...
+        </p>
+      </div>
+    </div>
+
+    <div class="toggle">+ CHEDDAR</div>
+    <div class="content-wrapper">
+
+      <div class="content">
+        <p>
+          <strong>제품 설명:</strong> Sharp cheddar with balanced nutty aroma
+          and creamy finish.
+        </p>
+        <p>
+          <strong>성분:</strong> Almond Base, Coconut Oil, Natural Flavor,
+          Salt...
+        </p>
+        <p><strong>영양정보:</strong> Calories 80, Fat 6g, Sodium 190mg...</p>
+      </div>
+    </div>
+
+    <div class="toggle">+ MOZZARELLA</div>
+    <div class="content-wrapper">
+      <div class="content">
+        <p>
+          <strong>제품 설명:</strong> Soft and mild mozzarella-style slices
+          perfect for melting.
+        </p>
+        <p>
+          <strong>성분:</strong> Almond Protein, Modified Starch, Coconut Oil,
+          Sea Salt...
+        </p>
+        <p><strong>영양정보:</strong> Calories 75, Fat 5g, Sodium 180mg...</p>
+      </div>
+    </div>
+
+    <script>
+      const toggles = document.querySelectorAll(".toggle");
+
+      toggles.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const content = btn.nextElementSibling;
+          const isOpen = content.classList.contains("open");
+
+          
+          if (isOpen) {
+            content.classList.remove("open");
+            btn.textContent = "+ " + btn.textContent.replace("× ", "");
+          } else {
+            content.classList.add("open");
+            btn.textContent = "× " + btn.textContent.replace("+ ", "");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
