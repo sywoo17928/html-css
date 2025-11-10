@@ -13,6 +13,7 @@
       html,
       body {
         height: 100%;
+        background: #000;
       }
 
       body {
@@ -32,7 +33,7 @@
         align-items: center;
         justify-content: space-between;
         height: 80px;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #808080;
         padding: 0 40px;
         position: absolute;
         top: 0;
@@ -80,6 +81,7 @@
 
       .main-menu a:hover {
         color: orange;
+        transform: translateY(-2px);
       }
       .main-menu li:hover .submenu {
         opacity: 1;
@@ -96,13 +98,13 @@
         top: 55px;
         left: 0;
         background: rgba(0, 0, 0, 0.6);
-
         padding: 12px 20px;
         border-top: 2px solid #000;
         opacity: 0;
         visibility: hidden;
         transform: translateY(0);
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(6px);
       }
 
       .submenu li {
@@ -234,6 +236,16 @@
       .btn:hover:before {
         width: 100%;
       }
+      section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
       .news-section {
         width: 100%;
         background: #000;
@@ -258,6 +270,11 @@
         background: #000;
         color: #fff;
         text-align: left;
+      }
+      .news-card img,
+      .slide-track img {
+        transition: all 0.4s ease;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
       }
 
       .news-card img {
@@ -287,11 +304,10 @@
         font-size: 24px;
         color: #bbb;
         margin-bottom: 10px;
-   
       }
 
       .news-card .readmore {
-        color: #ff7b00;
+        color: #808080;
         font-size: 18px;
         font-weight: bold;
         text-decoration: none;
@@ -341,6 +357,135 @@
         text-decoration: none;
         z-index: 2;
       }
+      footer {
+        width: 100%;
+        background: #000;
+        color: #ccc;
+        border-top: 1px solid #1a1a1a;
+        font-family: "01HanwhaB", sans-serif;
+        padding: 60px 150px;
+        box-sizing: border-box;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .footer-left {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-left h1 {
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .footer-left h1 a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer-info p {
+        font-size: 14px;
+        color: #999;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .footer-info span {
+        color: #555;
+        margin: 0 8px;
+      }
+
+      .footer-menu {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+      }
+
+      .footer-menu li {
+        font-size: 14px;
+        color: #999;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .footer-menu li:hover {
+        color: #ff6600;
+      }
+
+      .footer-menu li.orange {
+        color: #ff6600;
+      }
+
+      .footer-right {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px;
+      }
+
+      .topbtn a {
+        display: inline-block;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        padding: 5px 15px;
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .topbtn a:hover {
+        background: #ff6600;
+        color: #000;
+        border-color: #ff6600;
+      }
+
+      .affiliate a {
+        color: #fff;
+        font-size: 14px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 2px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .affiliate a:hover {
+        color: #ff6600;
+        border-color: #ff6600;
+      }
+
+      .copyright {
+        font-size: 13px;
+        color: #777;
+      }
+      @media (max-width: 1024px) {
+        footer {
+          padding: 40px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 25px;
+        }
+
+        .footer-right {
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
+
       @keyframes scroll {
         from {
           transform: translateX(0);
@@ -571,18 +716,48 @@
 
     <script></script>
     <footer>
-      <h1>
-        <a href="#">Hanwha Eagles </a>
-        <div class="footer_eagles">
-          <ul>
-            <li>대전광역시 중구 대종로 377 한화이글스</li>
-            <li>대표이사 박종태</li>
-            <li>사업자등록번호 306-81-12757</li>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <h1><a href="#">Hanwha Eagles</a></h1>
+
+          <div class="footer-info">
+            <p>
+              대전광역시 중구 대종로 377 한화이글스 <span>|</span> 대표이사
+              박종태
+            </p>
+            <p>사업자등록번호 306-81-12757</p>
+            <p>TEL 042-630-8200 <span>|</span> FAX 042-632-2929</p>
+          </div>
+
+          <ul class="footer-menu">
+            <li>법적고지</li>
+            <li class="orange">개인정보 처리방침</li>
+            <li>이용약관</li>
+            <li>고객문의</li>
+            <li>사이트맵</li>
+            <li>광고문의</li>
           </ul>
-          <p>TEL 042-630-8200</p>
-          <p>FAX 042-632-2929</p>
         </div>
-      </h1>
+
+        <div class="footer-right">
+          <div class="topbtn"><a href="#top">TOP</a></div>
+          <div class="affiliate"><a href="#">계열사 바로가기</a></div>
+          <div class="copyright">
+            © 2014 HANWHA EAGLES. All rights Reserved.
+          </div>
+        </div>
+      </div>
     </footer>
+    <script>
+      const sections = document.querySelectorAll("section");
+      window.addEventListener("scroll", () => {
+        sections.forEach((sec) => {
+          const rect = sec.getBoundingClientRect().top;
+          if (rect < window.innerHeight - 150) {
+            sec.classList.add("visible");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
