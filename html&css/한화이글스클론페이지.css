@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>구단소개</title>
-    <style>
-      * {
+  * {
         margin: 0;
         padding: 0;
       }
-      ul {
-        list-style: none;
-      }
+
       html,
-      body {
+      body 
+      {
         height: 100%;
+        background-color: #0a1320;
+
       }
 
       body {
@@ -22,8 +16,10 @@
         font-family: "01HanwhaB", sans-serif;
         color: #fff;
         overflow-x: hidden;
-        background-image: url(../자바스크립트/images/bg_header_eagles.jpg);
-        background-size: cover;
+      }
+      a {
+        text-decoration: none;
+        color: #ccc;
       }
 
       header {
@@ -32,8 +28,9 @@
         align-items: center;
         justify-content: space-between;
         height: 80px;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #808080;
         padding: 0 40px;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 100;
@@ -57,15 +54,14 @@
         align-items: center;
         gap: 40px;
         position: relative;
-        width: 100%;
+        width: 100vh;
 
         padding: 12px 40px;
-
         margin: 0;
         border-top: none;
-
         z-index: 50;
       }
+
       .main-menu li {
         list-style: none;
         position: relative;
@@ -80,6 +76,7 @@
 
       .main-menu a:hover {
         color: orange;
+        transform: translateY(-2px);
       }
       .main-menu li:hover .submenu {
         opacity: 1;
@@ -101,11 +98,14 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(0);
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(6px);
       }
+
       .submenu li {
         list-style: none;
       }
+
       .submenu a {
         color: #fff;
         white-space: nowrap;
@@ -131,7 +131,7 @@
       .right-menu a:hover {
         color: #fff;
       }
-      
+
       section {
         position: relative;
         width: 100%;
@@ -139,6 +139,8 @@
         overflow: hidden;
         margin-top: 80px;
       }
+     
+
       .social-media {
         position: absolute;
         right: 20px;
@@ -159,7 +161,207 @@
         border-radius: 50%;
         background-size: contain;
         background-repeat: no-repeat;
-      }  footer {
+      }
+      video,
+      img {
+        display: block;
+        width: 100%;        
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      .bg-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .auto-slide {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .slide-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 80s linear infinite;
+      }
+
+      .slide-track img {
+        width: 718px;
+        height: auto;
+        margin: 0 25px;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+
+      .slide-track img:hover {
+        transform: scale(1.05);
+      }
+      .gallery_btn {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-block;
+        overflow: hidden;
+        height: 62px;
+        line-height: 62px;
+        padding: 0 52px;
+        position: relative;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        z-index: 1;
+      }
+      .btn::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(243, 115, 33, 0.8);
+        transition: 0.5s;
+      }
+      .btn > a {
+        position: relative;
+        z-index: 2;
+      }
+      .btn:hover:before {
+        width: 100%;
+      }
+      section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .news-section {
+        width: 100%;
+        background: #000;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .news-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-bottom: 60px;
+      }
+
+      .news-card {
+        width: 392px;
+
+        background: #000;
+        color: #fff;
+        text-align: left;
+      }
+      .news-card img,
+      .slide-track img {
+        transition: all 0.4s ease;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      }
+
+      .news-card img {
+        height: 270px;
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .news-card img:hover {
+        transform: scale(1.05);
+      }
+
+      .news-card .date {
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+
+      .news-card h3 {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 8px 0;
+      }
+
+      .news-card .desc {
+        font-size: 24px;
+        color: #bbb;
+        margin-bottom: 10px;
+      }
+
+      .news-card .readmore {
+        color: #808080;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+
+      .news-card .readmore:hover {
+        color: #fff;
+      }
+
+      .news-btn {
+        display: flex;
+        justify-content: center;
+      }
+
+      .news-btn .btn {
+        display: inline-block;
+        overflow: hidden;
+        height: 62px;
+        line-height: 62px;
+        padding: 0 52px;
+        position: relative;
+        font-size: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        z-index: 1;
+      }
+
+      .news-btn .btn::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(243, 115, 33, 0.8);
+        transition: 0.5s;
+      }
+
+      .news-btn .btn:hover::before {
+        width: 100%;
+      }
+
+      .news-btn .btn a {
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+        z-index: 2;
+      }
+      footer {
         width: 100%;
         background: #000;
         color: #ccc;
@@ -271,151 +473,3 @@
         font-size: 13px;
         color: #777;
       }
-      
-      @media (max-width: 1024px) {
-        header {
-          flex-direction: column;
-          height: auto;
-          padding: 20px;
-        }
-
-        .header-left {
-          flex-direction: column;
-        }
-
-        .main-menu {
-          flex-direction: column;
-          width: 100%;
-          margin-left: 0;
-          padding: 10px 0;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .submenu {
-          position: static;
-          flex-direction: column;
-          background: #111;
-          border-top: none;
-          padding: 10px 0;
-        }
-
-        section {
-          margin-top: 0;
-        }
-      }
-      
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <div class="logo">
-          <a href="../html&css/한화이글스클론페이지3.html">
-            <img
-              src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
-              alt="Eagles Logo"
-            />
-          </a>
-        </div>
-
-        <ul class="main-menu">
-          <li>
-            <a href="#">EAGLES</a>
-            <ul class="submenu">
-              <li>
-                <a href="../html&css/한화이글스클론페이지2.html">구단소개</a>
-              </li>
-              <li><a href="#">그룹사소개</a></li>
-              <li><a href="#">HISTORY</a></li>
-              <li><a href="#">대전 한화생명 볼파크</a></li>
-              <li><a href="#">사회공헌</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">PLAYERS</a>
-            <ul class="submenu">
-              <li><a href="#">코칭스텝</a></li>
-              <li><a href="#">투수</a></li>
-              <li><a href="#">포수</a></li>
-              <li><a href="#">내야수</a></li>
-              <li><a href="#">외야수</a></li>
-              <li><a href="#">군입대 선수</a></li>
-              <li><a href="#">응원단</a></li>
-              <li><a href="#">STAFF</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">GAME</a>
-            <ul class="submenu">
-              <li><a href="#">1군 경기일정</a></li>
-              <li><a href="#">퓨처스 경기일정</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">FAN</a>
-            <ul class="submenu">
-              <li><a href="#">구단경기</a></li>
-              <li><a href="#">키즈클럽</a></li>
-              <li><a href="#">펜 타임즈</a></li>
-              <li><a href="#">갤러리</a></li>
-              <li><a href="#">이글스 아카이브</a></li>
-            </ul>
-          </li>
-          <li><a href="#">SHOP</a></li>
-          <li><a href="#">TICKET</a></li>
-        </ul>
-      </div>
-
-      <div class="right-menu">
-        <a href="https://www.hanwhaeagles.co.kr/resources/vr/index.html"
-          >좌석뷰 확인하기</a
-        >
-        <a href="#">KO</a> |
-        <a href="#">EN</a>
-        <a href="#">LOGIN</a>
-        <a href="#">JOIN US</a>
-      </div>
-    </header>
-    <div class="active">
-      <ul>
-        <li>
-          <a href="#">구단소개</a>
-        </li>
-      </ul>
-    </div>
-      <footer>
-      <div class="footer-inner">
-        <div class="footer-left">
-          <h1><a href="#">Hanwha Eagles</a></h1>
-
-          <div class="footer-info">
-            <p>
-              대전광역시 중구 대종로 377 한화이글스 <span>|</span> 대표이사
-              박종태
-            </p>
-            <p>사업자등록번호 306-81-12757</p>
-            <p>TEL 042-630-8200 <span>|</span> FAX 042-632-2929</p>
-          </div>
-
-          <ul class="footer-menu">
-            <li>법적고지</li>
-            <li class="orange">개인정보 처리방침</li>
-            <li>이용약관</li>
-            <li>고객문의</li>
-            <li>사이트맵</li>
-            <li>광고문의</li>
-          </ul>
-        </div>
-
-        <div class="footer-right">
-          <div class="topbtn"><a href="#top">TOP</a></div>
-          <div class="affiliate"><a href="#">계열사 바로가기</a></div>
-          <div class="copyright">
-            © 2014 HANWHA EAGLES. All rights Reserved.
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
