@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한화이글스</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        background-color: #0a1320;
+      }
+
+      body {
+        background-color: #0a1320;
+        font-family: "01HanwhaB", sans-serif;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: #ccc;
+      }
+
+      header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        border-bottom: 1px solid #808080;
+        padding: 0 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        box-sizing: border-box;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .logo img {
+        width: 90px;
+        height: auto;
+        vertical-align: middle;
+      }
+
+      .main-menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+        width: 100vh;
+
+        padding: 12px 40px;
+        margin: 0;
+        border-top: none;
+        z-index: 50;
+      }
+
+      .main-menu li {
+        list-style: none;
+        position: relative;
+      }
+
+      .main-menu a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        transition: 0.2s;
+      }
+
+      .main-menu a:hover {
+        color: orange;
+        transform: translateY(-2px);
+      }
+      .main-menu li:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .submenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 40px;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 12px 20px;
+        border-top: 2px solid #000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(0);
+        transition: all 0.4s ease;
+        backdrop-filter: blur(6px);
+      }
+
+      .submenu li {
+        list-style: none;
+      }
+
+      .submenu a {
+        color: #fff;
+        white-space: nowrap;
+        font-size: 16px;
+      }
+
+      .submenu a:hover {
+        color: orange;
+      }
+
+      .right-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 15px;
+      }
+
+      .right-menu a {
+        color: #b3b3b3;
+        text-decoration: none;
+      }
+
+      .right-menu a:hover {
+        color: #fff;
+      }
+
+      section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+
+      .social-media {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+      }
+      .social-media img {
+        display: block;
+        position: relative;
+        width: 56px;
+        height: 56px;
+        border: 1px solid #000;
+        background-color: #000;
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      video,
+      img {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      .bg-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .auto-slide {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .slide-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 80s linear infinite;
+      }
+
+      .slide-track img {
+        width: 718px;
+        height: auto;
+        margin: 0 25px;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+
+      .slide-track img:hover {
+        transform: scale(1.05);
+      }
+      .gallery_btn {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-block;
+        overflow: hidden;
+        height: 62px;
+        line-height: 62px;
+        padding: 0 52px;
+        position: relative;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        z-index: 1;
+      }
+      .btn::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(243, 115, 33, 0.8);
+        transition: 0.5s;
+      }
+      .btn > a {
+        position: relative;
+        z-index: 2;
+      }
+      .btn:hover:before {
+        width: 100%;
+      }
+      section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .news-section {
+        width: 100%;
+        background: #000;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .news-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-bottom: 60px;
+      }
+
+      .news-card {
+        width: 392px;
+
+        background: #000;
+        color: #fff;
+        text-align: left;
+      }
+      .news-card img,
+      .slide-track img {
+        transition: all 0.4s ease;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      }
+
+      .news-card img {
+        height: 270px;
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .news-card img:hover {
+        transform: scale(1.05);
+      }
+
+      .news-card .date {
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+
+      .news-card h3 {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 8px 0;
+      }
+
+      .news-card .desc {
+        font-size: 24px;
+        color: #bbb;
+        margin-bottom: 10px;
+      }
+
+      .news-card .readmore {
+        color: #808080;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+
+      .news-card .readmore:hover {
+        color: #fff;
+      }
+
+      .news-btn {
+        display: flex;
+        justify-content: center;
+      }
+
+      .news-btn .btn {
+        display: inline-block;
+        overflow: hidden;
+        height: 62px;
+        line-height: 62px;
+        padding: 0 52px;
+        position: relative;
+        font-size: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        z-index: 1;
+      }
+
+      .news-btn .btn::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(243, 115, 33, 0.8);
+        transition: 0.5s;
+      }
+
+      .news-btn .btn:hover::before {
+        width: 100%;
+      }
+
+      .news-btn .btn a {
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+        z-index: 2;
+      }
+      footer {
+        width: 100%;
+        background: #000;
+        color: #ccc;
+        border-top: 1px solid #1a1a1a;
+        font-family: "01HanwhaB", sans-serif;
+        padding: 60px 150px;
+        box-sizing: border-box;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .footer-left {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-left h1 {
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .footer-left h1 a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer-info p {
+        font-size: 14px;
+        color: #999;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .footer-info span {
+        color: #555;
+        margin: 0 8px;
+      }
+
+      .footer-menu {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+      }
+
+      .footer-menu li {
+        font-size: 14px;
+        color: #999;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .footer-menu li:hover {
+        color: #ff6600;
+      }
+
+      .footer-menu li.orange {
+        color: #ff6600;
+      }
+
+      .footer-right {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px;
+      }
+
+      .topbtn a {
+        display: inline-block;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        padding: 5px 15px;
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+        transition: 1s;
+        animation: 1.5s;
+      }
+
+      .topbtn a:hover {
+        background: #ff6600;
+        color: #000;
+        border-color: #ff6600;
+      }
+
+      .affiliate a {
+        color: #fff;
+        font-size: 14px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 2px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .affiliate a:hover {
+        color: #ff6600;
+        border-color: #ff6600;
+      }
+
+      .copyright {
+        font-size: 13px;
+        color: #777;
+      }
+      @media (max-width: 1024px) {
+        footer {
+          padding: 40px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 25px;
+        }
+
+        .footer-right {
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        header {
+          flex-direction: column;
+          height: auto;
+          padding: 20px;
+        }
+
+        .header-left {
+          flex-direction: column;
+        }
+
+        .main-menu {
+          flex-direction: column;
+          width: 100%;
+          margin-left: 0;
+          padding: 10px 0;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .submenu {
+          position: static;
+          flex-direction: column;
+          background: #111;
+          border-top: none;
+          padding: 10px 0;
+        }
+
+        section {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="https://www.hanwhaeagles.co.kr/images/common/h_logo.png"
+              alt="Eagles Logo"
+            />
+          </a>
+        </div>
+
+        <ul class="main-menu">
+          <li>
+            <a href="#">EAGLES</a>
+            <ul class="submenu">
+              <li>
+                <a href="../html&css/한화이글스클론페이지2.html">구단소개</a>
+              </li>
+              <li><a href="#">그룹사소개</a></li>
+              <li><a href="#">HISTORY</a></li>
+              <li><a href="#">대전 한화생명 볼파크</a></li>
+              <li><a href="#">사회공헌</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">PLAYERS</a>
+            <ul class="submenu">
+              <li><a href="#">코칭스텝</a></li>
+              <li><a href="#">투수</a></li>
+              <li><a href="#">포수</a></li>
+              <li><a href="#">내야수</a></li>
+              <li><a href="#">외야수</a></li>
+              <li><a href="#">군입대 선수</a></li>
+              <li><a href="#">응원단</a></li>
+              <li><a href="#">STAFF</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">GAME</a>
+            <ul class="submenu">
+              <li><a href="#">1군 경기일정</a></li>
+              <li><a href="#">퓨처스 경기일정</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">FAN</a>
+            <ul class="submenu">
+              <li><a href="#">구단경기</a></li>
+              <li><a href="#">키즈클럽</a></li>
+              <li><a href="#">펜 타임즈</a></li>
+              <li><a href="#">갤러리</a></li>
+              <li><a href="#">이글스 아카이브</a></li>
+            </ul>
+          </li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">TICKET</a></li>
+        </ul>
+      </div>
+
+      <div class="right-menu">
+        <a href="https://www.hanwhaeagles.co.kr/resources/vr/index.html"
+          >좌석뷰 확인하기</a
+        >
+        <a href="#">KO</a> |
+        <a href="#">EN</a>
+        <a href="#">LOGIN</a>
+        <a href="#">JOIN US</a>
+      </div>
+    </header>
+
+    <section>
+      <video
+        class="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        controlslist="nodownload nofullscreen noremoteplayback "
+        disablepictureinpicture
+      >
+        <source src="./images/movie_eagles.mp4" type="video/mp4" />
+      </video>
+      <div class="social-media">
+        <a href="https://www.youtube.com/channel/UCdq4Ji3772xudYRUatdzRrg"
+          ><img
+            src="https://www.hanwhaeagles.co.kr/images/common/ico_youtube.png"
+            alt="YouTube 바로가기"
+        /></a>
+        <a href="https://www.facebook.com/hanwhaeagles.news/"
+          ><img
+            src="https://www.hanwhaeagles.co.kr/images/common/ico_facebook.png"
+            alt="facebook 바로가기"
+        /></a>
+        <a
+          href="https://www.instagram.com/accounts/login/?next=%2Fhanwhaeagles_soori%2F&source=omni_redirect"
+          ><img
+            src="https://www.hanwhaeagles.co.kr/images/common/ico_instagram.png"
+            alt="Instagram 바로가기"
+        /></a>
+        <a href="https://x.com/hoodi_thespace/"
+          ><img
+            src="https://www.hanwhaeagles.co.kr/images/common/ico_twitter.png"
+            alt="X 바로가기"
+        /></a>
+        <a href="https://kr.pinterest.com/hanwhaeagles1985/_saved/"
+          ><img
+            src="https://www.hanwhaeagles.co.kr/images/common/ico_pinterest.png"
+            alt="Pinterest 바로가기"
+        /></a>
+      </div>
+    </section>
+    <section class="auto-slide">
+      <div class="slide-track">
+        <img src="../hanwha/images/H1.png" alt="" />
+        <img src="../hanwha/images/H4.png" alt="" />
+        <img src="../hanwha/images/H3.png" alt="" />
+        <img src="../hanwha/images/H2.png" alt="" />
+        <img src="../hanwha/images/H5.png" alt="" />
+        <img src="../hanwha/images/H8.png" alt="" />
+        <img src="../hanwha/images/H7.png" alt="" />
+        <img src="../hanwha/images/H6.png" alt="" />
+
+        <img src="../hanwha/images/H1.png" alt="" />
+        <img src="../hanwha/images/H4.png" alt="" />
+        <img src="../hanwha/images/H3.png" alt="" />
+        <img src="../hanwha/images/H2.png" alt="" />
+        <img src="../hanwha/images/H5.png" alt="" />
+        <img src="../hanwha/images/H8.png" alt="" />
+        <img src="../hanwha/images/H7.png" alt="" />
+        <img src="../hanwha/images/H6.png" alt="" />
+      </div>
+    </section>
+    <div class="gallery_btn">
+      <p class="btn">
+        <a href="">GO TO GALLERY</a>
+      </p>
+    </div>
+    <section class="news-section">
+      <div class="news-container">
+        <div class="news-card">
+          <img src="./images/btn.jpg" alt="" />
+          <p class="date">2025-10-11</p>
+          <h3>
+            한화이글스, 팀 스토리 담은 2025 <br />
+            포스트시즌 캠페인
+          </h3>
+          <p class="desc">
+            한화이글스가 포스트시즌을 앞두고 그간의 여정과 팀...
+          </p>
+          <a href="#" class="readmore">READ MORE</a>
+        </div>
+
+        <div class="news-card">
+          <img src="./images/btn2.jpg" alt="플레이오프 시구" />
+          <p class="date">2025-10-16</p>
+          <h3>
+            플레이오프 1차전 시구에 배우 김재욱,<br />2차전은 가수 겸 배우
+            권유리
+          </h3>
+          <p class="desc">
+            한화이글스는 배우 김재욱과 가수 겸 배우 권유리를...
+          </p>
+          <a href="#" class="readmore">READ MORE</a>
+        </div>
+
+        <div class="news-card">
+          <img src="./images/btn3.jpg" alt="Hello Future" />
+          <p class="date">2025-10-12</p>
+          <h3>
+            헬로 퓨쳐!(Hello Future!), 2026 한화이글스 신인선수 입단식 개최
+          </h3>
+          <p class="desc">
+            "새벽훈련을 위해 일어났을 때 하루도 거르지 않고 항상..."
+          </p>
+          <a href="#" class="readmore">READ MORE</a>
+        </div>
+      </div>
+
+      <div class="news-btn">
+        <p class="btn"><a href="#">VIEW ALL NEWS</a></p>
+      </div>
+    </section>
+
+    <script></script>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <h1><a href="#">Hanwha Eagles</a></h1>
+
+          <div class="footer-info">
+            <p>
+              대전광역시 중구 대종로 377 한화이글스 <span>|</span> 대표이사
+              박종태
+            </p>
+            <p>사업자등록번호 306-81-12757</p>
+            <p>TEL 042-630-8200 <span>|</span> FAX 042-632-2929</p>
+          </div>
+
+          <ul class="footer-menu">
+            <li>법적고지</li>
+            <li class="orange">개인정보 처리방침</li>
+            <li>이용약관</li>
+            <li>고객문의</li>
+            <li>사이트맵</li>
+            <li>광고문의</li>
+          </ul>
+        </div>
+
+        <div class="footer-right">
+          <div class="topbtn"><a href="#top">TOP</a></div>
+          <div class="affiliate"><a href="#">계열사 바로가기</a></div>
+          <div class="copyright">
+            © 2014 HANWHA EAGLES. All rights Reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const sections = document.querySelectorAll("section");
+      window.addEventListener("scroll", () => {
+        sections.forEach((sec) => {
+          const rect = sec.getBoundingClientRect().top;
+          if (rect < window.innerHeight - 150) {
+            sec.classList.add("visible");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
