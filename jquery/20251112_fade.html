@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        height: 100px;
+        background: #ccc;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {});
+    </script>
+  </head>
+  <body>
+    <p>제이쿼리</p>
+    <button id="fadein">fadein</button>
+    <button id="fadeout">fadeout</button>
+    <button id="fadetoggle">fadetoggle</button>
+    <button id="fadeto">fadeto</button>
+    <script>
+        $("#fadeout").click(function () {
+      $("p").fadeOut(1000);
+
+        });
+        $("#fadein").click(function () {
+      $("p").fadeIn(1000);
+
+        });
+        $("#fadeToggle").click(function () {
+      $("p").fadeToggle(1000);
+
+        });
+        $("#fadeto").click(function () {
+      $("p").fadeTo(1000, 0.5);
+
+        });
+    </script>
+  </body>
+</html>

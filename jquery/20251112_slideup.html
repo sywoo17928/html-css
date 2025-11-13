@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+			div {
+				height: 500px;
+			}
+      p {
+        height: 100%;
+        background: #ccc;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {});
+    </script>
+  </head>
+  <body>
+		
+    <div>
+			<p>제이쿼리</p>
+			<button id="slideDown">slideDown</button>
+			<button id="slideUp">slideUp</button>
+			<button id="fadetoggle">slidetoggle</button>
+			<button id="slideTo">slideTo</button>
+		</div>
+    <script>
+      $("#slideDown").click(function () {
+        $("p").slideDown(1000);
+      });
+      $("#slideUp").click(function () {
+        $("p").slideUp(1000);
+      });
+      $("#slideToggle").click(function () {
+        $("p").slideToggle(1000);
+      });
+      $("#slideTo").click(function () {
+        $("p").slideTo(1000, 0.5);
+      });
+    </script>
+  </body>
+</html>

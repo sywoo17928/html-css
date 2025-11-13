@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>윤태민 포트폴리오</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+        color: #333;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* 프로필 사진 */
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 4px solid #fff;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      .contact {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .contact a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #6200ea;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .contact a:hover {
+        background-color: #3700b3;
+        transform: translateY(-3px);
+      }
+
+      .projects {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .project {
+        background: #fff;
+        padding: 25px 40px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        background: #f0f4ff;
+      }
+
+      .project a {
+        text-decoration: none;
+        color: #6200ea;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .project {
+          padding: 20px 25px;
+        }
+
+        .project a {
+          font-size: 1rem;
+        }
+
+        .contact a {
+          padding: 8px 15px;
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 프로필 사진 -->
+    <img src="your-photo.jpg" alt="윤태민 프로필 사진" class="profile-pic" />
+
+    <h1>빠른 적응력과 끈기를 갖고 있는 성장형 퍼블리셔 <br> 윤태민입니다.</h1>
+    <p><br /></p>
+
+    <!-- 연락처 -->
+    <div class="contact">
+      <a href="tel:01041232078">전화: 010-4123-2078</a>
+      <a href="mailto:sywoo17928@gmail.com">메일: sywoo17928@gmail.com</a>
+    </div>
+
+    <!-- 프로젝트 링크 -->
+    <div class="projects">
+      <div class="project">
+        <a href="../hanwha/hanwha.html" target="_blank"
+          >한화이글스 클론</a
+        >
+      </div>
+      <div class="project">
+        <a href="../yoajung/yoajung.html" target="_blank"
+          >요아정 클론</a
+        >
+      </div>
+    </div>
+
+    <footer>© 2025 윤태민</footer>
+  </body>
+</html>

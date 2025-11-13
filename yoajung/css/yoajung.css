@@ -1,0 +1,169 @@
+@charset "utf-8";
+font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+}
+.header {
+  display: flex;
+  gap: 30%;
+  font-size: 21px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 25px 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 95px;
+  height: auto;
+}
+
+.header_menu > ul {
+  display: flex;
+  gap: 200px;
+  list-style: none;
+}
+
+.header_menu > li > a {
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.header_menu > ul > li a:hover {
+  color: #f73c93;
+}
+
+.subimg {
+  background-image: url("../imags/a_09.jpg");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.subimgtext {
+  text-align: left;
+  position: absolute;
+  top: 70%;
+  left: 11%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: #fff;
+  z-index: 10;
+}
+
+.subimgtext .sub1 {
+  text-align: left;
+  width: 300px;
+  height: 60px;
+  background-image: url("../imags/a_07.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 20px 0;
+
+  margin-top: -9%;
+}
+
+.subimgtext .sub2 {
+  text-align: left;
+  width: 607px;
+  height: 100px;
+  background-image: url("../imags/a_08.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  margin: 0 0 20px 0;
+}
+
+.subimgtext .text {
+  position: relative;
+}
+
+.subimgtext .text p {
+  color: #000;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.section {
+  gap: 40px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.api {
+  position: relative;
+  text-align: center;
+  margin: 40px auto;
+  position: relative;
+  width: 80%;
+}
+.api img {
+  
+  border-radius: 20px;
+}
+.api > a {
+  position: absolute;
+  top: 70%; /*"세로 기억하기"*/
+  left: 42%; /* 가로  기억하기*/
+  transform: translate(-50%, -10%);
+  color: #000;
+  background-color: rgb(255, 255, 255);
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .api img {
+    width: 150px;
+  }
+
+  .api a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .api img {
+    width: 120px;
+  }
+
+  .api a {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
