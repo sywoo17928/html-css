@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        height: 100vh;
+      }
+
+      .box {
+        cursor: pointer;
+        opacity: 0;
+        width: 50px;
+        height: 50px;
+      }
+      .green {
+        background: green;
+      }
+      .purple {
+        background: purple;
+      }
+      .orange {
+        background: orange;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="section">
+      <div class="box green"></div>
+      <div class="box purple"></div>
+      <div class="box orange"></div>
+      <div class="box purple"></div>
+      <div class="box green"></div>
+    </div>
+    <button class="play">play</button>
+    <script>
+      let ani = gsap.to(".box", {
+        duration: 5,
+        rotation: 360,
+        opacity: 1,
+        // delay: 0.5,
+        //stagger: 1, // stagger in from the left with a 0.1 second gap in between animations
+        stagger: {
+          from: "random",
+          amount: 1,
+        },
+        ease: "sine.out",
+        paused: true,
+      });
+      document.querySelector(".play").onclick = function () {
+        ani.play();
+      };
+    </script>
+  </body>
+</html>

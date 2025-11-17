@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 50px;
+        height: 50px;
+      }
+      .green {
+        background: green;
+      }
+      .blue {
+        background: blue;
+      }
+      .red {
+        background: red;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="box red"></div>
+    <button class="pause">pause</button>
+    <button class="resume">resume</button>
+    <button class="restart">restart</button>
+    <button class="seek">seek</button>
+    <button class="reverse">reverse</button>
+    <script>
+      let tl = gsap.timeline();
+      tl.to(
+        ".green",
+        {
+          x: 500,
+          duration: 5,
+          rotation: 360,
+        },
+        1
+      )
+        .to(
+          ".blue",
+          {
+            x: 500,
+            duration: 5,
+            rotation: 360,
+            // delay: 2,
+          },
+          "-=2"
+        )
+        .to(".red", {
+          x: 500,
+          duration: 5,
+          rotation: 360,
+          //delay: 4,
+        });
+      document.querySelector(".pause").onclick = function () {
+        tl.pause();
+      };
+      document.querySelector(".resume").onclick = function () {
+        tl.resume();
+      };
+      document.querySelector(".restart").onclick = function () {
+        tl.restart();
+      };
+      document.querySelector(".seek").onclick = function () {
+        tl.seek(3);
+      };
+      document.querySelector(".reverse").onclick = function () {
+        tl.reverse();
+      };
+    </script>
+  </body>
+</html>
