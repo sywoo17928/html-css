@@ -21,6 +21,7 @@ a {
 
 body {
   font-family: "Pretendard", sans-serif;
+ 
 }
 .header {
   display: flex;
@@ -178,6 +179,18 @@ body {
   display: flex;
   transition: transform 0.5s ease;
 }
+.swiper-wrapper  p {
+  align-items: center;
+  
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 ;
+  font-size: 20px;
+  margin: 5px 0;
+
+
+}
 
 .slide {
   min-width: 208px;
@@ -208,6 +221,7 @@ body {
 
 /* 활성 탭 */
 .best-category a.tab.active {
+  
   color: #f73c5a;
   font-weight: 700;
 }
@@ -222,6 +236,40 @@ body {
   pointer-events: none; /* 클릭 방지 */
   color: #777;
   font-weight: 500;
+}
+.sectionmenu{
+ width: 100%;
+ height: 100%;
+ position: relative;
+}
+.last_menu {
+  
+  width: 857px;
+  height: 706px;
+  background-color:#0074bc;
+}
+.last_menu > h1 {
+  color: #fff;
+}
+.last_menu > span{
+  color: #fff;
+}
+
+.last_menu2{
+  top: 0%;
+  left: 45%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 857px;
+  height: 706px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  z-index: 1;
 }
 
 
