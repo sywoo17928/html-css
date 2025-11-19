@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="jquery.fullPage.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="jquery.fullPage.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .fp-tooltip {
+        color: #aaa;
+      }
+      #fp-nav span,
+      .fp-slidesNav span {
+        border-color: #aaa;
+      }
+      #fp-nav li .active span,
+      .fp-slidesNav .active span {
+        background: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fullpage">
+      <section class="section">
+        <h1 data-aos="fade-right">첫페이지</h1>
+      </section>
+      <section class="section">
+        <h1 data-aos="fade-right">두번째페이지</h1>
+      </section>
+      <section class="section">
+        <h1 data-aos="fade-right">세번페이지</h1>
+      </section>
+      <section class="section">
+        <h1 data-aos="fade-right">네번페이지</h1>
+      </section>
+    </div>
+
+    <script>
+      AOS.init({ once: false });
+      const sectionLength = $(".section").length;
+      $("#fullpage").fullpage({
+        verticalCentered: false,
+        // scrollBar: true,
+        navigation: true,
+        css3: true,
+        navigationPosition: "right",
+        afterLoad: function (anchorLink, index) {
+          $("[data-aos]").removeClass("aos-animate");
+
+          // 현재 섹션만 애니메이션 실행
+          $(".section")
+            .eq(index - 1)
+            .find("[data-aos]")
+            .addClass("aos-animate");
+        },
+      });
+    </script>
+  </body>
+</html>
