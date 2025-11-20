@@ -188,13 +188,12 @@ body {
 .best-category {
   display: flex;
   align-items: center;
-  justify-content: right; /* 오른쪽 정렬 */
+  justify-content: right;
   margin-bottom: 4%;
   width: 80%;
   gap: 20px;
 }
 
-/* 탭 링크 스타일 */
 .best-category a.tab {
   color: #000;
   text-decoration: none;
@@ -202,20 +201,17 @@ body {
   transition: 0.2s;
 }
 
-/* 활성 탭 */
 .best-category a.tab.active {
   color: #f73c5a;
   font-weight: 700;
 }
 
-/* 비활성 탭 hover */
 .best-category a.tab:hover {
   opacity: 0.7;
 }
 
-/* 구분선 스타일 */
 .best-category .bar {
-  pointer-events: none; /* 클릭 방지 */
+  pointer-events: none;
   color: #777;
   font-weight: 500;
 }
@@ -229,7 +225,6 @@ body {
   align-items: stretch;
 }
 
-/* 왼쪽 파란 영역 */
 .sectionmenu .last_menu {
   background-color: #0074bc;
   width: 560px;
@@ -255,7 +250,7 @@ body {
 .sectionmenu .last_menu h1 {
   color: #fff;
   font-size: 46px;
-  /* padding: 100px 100px; */
+
   margin-bottom: 100px;
 }
 
@@ -296,7 +291,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 12px;
+  gap: 30px;
 }
 
 .sectionmenu .last_menu3 h1:first-child {
@@ -314,11 +309,77 @@ body {
   display: block;
   font-size: 28px;
   margin-top: 10px;
-  line-height: 1.4;
+
   font-weight: 800;
 }
+.sns_rap {
+  width: 1180px;
+  margin: 0 auto;
+}
+.sns_rap .SNS {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.sns_rap .SNS > div {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.sns_rap .SNS > p {
+  width: 285px;
+  padding: 20px 0;
+  background-color: #f73c54;
+  text-align: center;
+  color: #fff;
+  border-radius: 100px;
+}
 
-/* 작은화면(반응형) 처리: 너무 작아지면 영역 쌓기 */
+.SNS_flex {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.SNS_flex > div {
+  flex: 1 0 18%;
+}
+.SNS_flex > div img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+.SNS_flex > h1 {
+  text-align: center;
+  display: flex;
+  margin: 40px;
+  justify-content: space-between;
+}
+footer {
+  background: #eb6cae url(../imags/footer_04.png) left top/cover;
+  padding: 50px 0;
+  margin-top: 100px;
+}
+footer .foot {
+  width: 1500px;
+  margin: 0 auto;
+}
+.foot .top {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 50px;
+}
+.bottom {
+  color: #fff;
+}
+.bottom > div {
+  display: flex;
+  gap: 20px;
+}
+.bottom > p {
+  margin: 20px 0;
+}
+
 @media (max-width: 1200px) {
   .sectionmenu {
     height: auto;

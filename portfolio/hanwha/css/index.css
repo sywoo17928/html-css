@@ -242,7 +242,6 @@ img {
   top: 0;
   background: rgba(243, 115, 33, 0.8);
   transition: 0.5s;
-  
 }
 
 .btn > a {
@@ -321,7 +320,7 @@ img {
 }
 
 .news-card .desc {
-  font-size: 24px;
+  font-size: 18px;
   color: #bbb;
   margin-bottom: 10px;
 }
@@ -344,13 +343,14 @@ img {
 }
 
 .news-btn .btn {
+  font-family: "01HanwhaB", sans-serif;
   display: inline-block;
   overflow: hidden;
   height: 62px;
   line-height: 62px;
   padding: 0 52px;
   position: relative;
-  font-size: 10px;
+  font-size: 16px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   z-index: 1;

@@ -1,67 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scroll Boxes</title>
-<style>
-  body {
-    margin: 0;
-    background: #fff; /* 전체 배경 흰색 */
-    font-family: Arial, sans-serif;
-  }
-
-  .box {
-    width: 500px;
-    height: 500px;
-    background: #fff;    /* 박스도 흰색 */
-    border: 1px solid #000; /* 박스를 구분하는 옅은 선 */
-    margin: 60px auto;   /* 가운데 정렬 */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s ease;
-  }
-
-  .box.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-</head>
-<body>
-
-<div id="container"></div>
-
-<script>
-  const container = document.getElementById("container");
-
-  // 처음 3개 생성
-  for (let i = 0; i < 3; i++) {
-    createBox();
-  }
-
-  function createBox() {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    container.appendChild(box);
-
-    // 등장 애니메이션 적용
-    setTimeout(() => {
-      box.classList.add("visible");
-    }, 10);
-  }
-
-  // 스크롤 바닥 근처에서 자동으로 새 박스 생성
-  window.addEventListener("scroll", () => {
-    const bottom = window.innerHeight + window.scrollY;
-    const docHeight = document.body.offsetHeight;
-
-    if (bottom >= docHeight - 200) {
-      createBox();
-    }
-  });
-</script>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
 </html>
